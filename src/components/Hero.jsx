@@ -19,7 +19,7 @@ export const Hero = () => {
                 }}
                 modules={[Autoplay]}
                 slidesPerView={1}
-                className=''
+                
 
             >
                 <SwiperSlide>

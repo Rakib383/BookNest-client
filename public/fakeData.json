@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/QN12zMy/steve-Jobs.jpg",
+      "name": "Steve Jobs",
+      "author": "Walter Isaacson",
+      "category": "Biography",
+      "quantity": 5,
+      "rating": 4.8
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/wrh4D9K/the-diary-of-a-young-girl.jpg",
+      "name": "The Diary of a Young Girl",
+      "author": "Anne Frank",
+      "category": "Biography",
+      "quantity": 7,
+      "rating": 4.9
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co/wsQzF3T/richDad.png",
+      "name": "Rich Dad Poor Dad",
+      "author": "Robert Kiyosaki",
+      "category": "Business & Economics",
+      "quantity": 12,
+      "rating": 4.7
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co/bskSrcm/thinking-Fast.jpg",
+      "name": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "category": "Business & Economics",
+      "quantity": 10,
+      "rating": 4.6
+    },
+    {
+      "id": 5,
+      "image": "https://i.ibb.co/k39XskL/a-Briefhistoryb.jpg",
+      "name": "A Brief History of Time",
+      "author": "Stephen Hawking",
+      "category": "Science & Technology",
+      "quantity": 8,
+      "rating": 4.8
+    },
+    {
+      "id": 6,
+      "image": "https://i.ibb.co/yqsBc08/sapiensb.png",
+      "name": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "category": "Science & Technology",
+      "quantity": 6,
+      "rating": 4.7
+    },
+    {
+      "id": 7,
+      "image": "https://i.ibb.co/ngtNpSY/Gunsb.jpg",
+      "name": "Guns, Germs, and Steel",
+      "author": "Jared Diamond",
+      "category": "History",
+      "quantity": 9,
+      "rating": 4.7
+    },
+    {
+      "id": 8,
+      "image": "https://i.ibb.co/dc1xx8K/history-Ancientb.jpg",
+      "name": "The History of the Ancient World",
+      "author": "Susan Wise Bauer",
+      "category": "History",
+      "quantity": 11,
+      "rating": 4.6
+    }
+  ]
+  
