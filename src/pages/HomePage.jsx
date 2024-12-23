@@ -1,6 +1,9 @@
+import { Categories } from "../components/Categories"
 
 export const HomePage = () => {
     return (
-        <div>HomePage</div>
+        <div>
+            <Categories/>
+        </div>
     )
 }
