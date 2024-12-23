@@ -34,7 +34,7 @@ export const NewArrival = () => {
                             slidesPerView: 3,
                         },
                     }}
-                    loop={true}
+                    
                     autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,

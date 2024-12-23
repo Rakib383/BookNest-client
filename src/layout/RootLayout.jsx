@@ -1,20 +1,30 @@
 import { Outlet } from "react-router-dom"
-import { Hero } from "../components/Hero"
 import { Navbar } from "../components/Navbar"
 import { Footer } from "../components/Footer"
+import { ToastContainer } from "react-toastify"
 
 export const RootLayout = () => {
     return (
         <div>
             <header>
                 <Navbar />
-                <Hero />
             </header>
             <Outlet />
             <footer>
                 <Footer />
             </footer>
-
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </div>
     )
 }
