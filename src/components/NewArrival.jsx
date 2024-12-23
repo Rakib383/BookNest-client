@@ -43,8 +43,8 @@ export const NewArrival = () => {
 
                     >
                     {
-                        books.map(book => <SwiperSlide className="rounded-xl">
-                            <NewBookCard book={book} key={book.id} />
+                        books.map(book => <SwiperSlide className="rounded-xl" key={book.id}>
+                            <NewBookCard book={book}  />
                         </SwiperSlide>)
                     }
                 </Swiper>
