@@ -2,8 +2,9 @@ import { Link, useNavigate } from "react-router-dom"
 import register from "../assets/images/registerPic2.svg"
 import { useContext, useState } from "react"
 import { AuthContext } from "../provider/AuthProvider"
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
 export const RegisterPage = () => {
     const [error, setError] = useState(null)
@@ -48,6 +49,10 @@ export const RegisterPage = () => {
         }
         createUser(email, password)
             .then((res) => {
+                const createdAt = res.user.metadata.creationTime
+                const user = {name,email,createdAt}
+                axios.post('http://localhost:5000/newUser',user)
+                .then(res => console.log(res))
                 
                 
                 updateUserProfile({ displayName: name, photoURL: photo })
@@ -70,6 +75,12 @@ export const RegisterPage = () => {
     const handleSignInWithGoogle = () => {
         signInWithGoogle()
             .then(result => {
+                const createdAt = result.user.metadata.creationTime
+                const name = result.user.displayName
+                const email = result.user.email
+                const user = {name,email,createdAt}
+                axios.post('http://localhost:5000/newUser',user)
+                .then(res => console.log(res))
                 setUser(result.user)
                 navigate("/")
                 successNotify()

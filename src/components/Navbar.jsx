@@ -1,10 +1,14 @@
-import { Tooltip } from "flowbite";
-import { useState } from "react";
+
+import { useContext } from "react";
 import { FaBookOpen } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import { Tooltip } from 'react-tooltip'
 export const Navbar = () => {
-    const [user, setUser] = useState(false)
+
+    const { user, setUser,logOut } = useContext(AuthContext);
+
     return (
 
 
@@ -66,7 +70,8 @@ export const Navbar = () => {
                                 {user?.displayName}
                             </Tooltip>
                         </div>
-                        <button className="px-3 py-2 bg-[#ff6392] text-white font-bold rounded-lg hover:text-[#ff6392] hover:outline outline-[#ff6392] hover:bg-white text-sm">Logout</button>
+                        <button onClick={logOut} className="px-3.5 py-2 text-white rounded-lg bg-secondaryColor hover:bg-[#40916c] font-bold
+              ">Logout</button>
                     </div> : <div className="flex gap-2 sm:gap-4 items-center">
                         <Link to="/login" className="px-3.5 py-2 text-white rounded-lg bg-secondaryColor hover:bg-[#40916c] font-bold
               ">
