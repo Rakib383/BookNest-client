@@ -10,7 +10,7 @@ export const NewArrival = () => {
     const [books, setBooks] = useState([])
 
     useEffect(() => {
-        fetch('/fakeData.json')
+        fetch('http://localhost:5000/allBooks')
             .then(res => res.json())
             .then(data => setBooks(data))
 
@@ -43,7 +43,7 @@ export const NewArrival = () => {
 
                     >
                     {
-                        books.map(book => <SwiperSlide className="rounded-xl" key={book.id}>
+                        books.map((book,ind) => <SwiperSlide className="rounded-xl" key={ind}>
                             <NewBookCard book={book}  />
                         </SwiperSlide>)
                     }

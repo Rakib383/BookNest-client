@@ -3,6 +3,7 @@ import { HomePage } from "../pages/HomePage";
 import { RootLayout } from "../layout/RootLayout";
 import { RegisterPage } from "../pages/RegisterPage";
 import { LoginPage } from "../pages/LoginPage";
+import { AllBooksPage } from "../pages/AllBooksPage";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
         {
           path:"login",
           element:<LoginPage/>
+        },
+        {
+          path:"allBooks",
+          element:<AllBooksPage/>,
+          loader:() => fetch("http://localhost:5000/allBooks")
         }
 
       ]

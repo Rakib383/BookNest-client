@@ -1,75 +1,203 @@
 [
-    {
-      "id": 1,
-      "image": "https://i.ibb.co/QN12zMy/steve-Jobs.jpg",
-      "name": "Steve Jobs",
-      "author": "Walter Isaacson",
-      "category": "Biography",
-      "quantity": 5,
-      "rating": 4.8
-    },
-    {
-      "id": 2,
-      "image": "https://i.ibb.co/wrh4D9K/the-diary-of-a-young-girl.jpg",
-      "name": "The Diary of a Young Girl",
-      "author": "Anne Frank",
-      "category": "Biography",
-      "quantity": 7,
-      "rating": 4.9
-    },
-    {
-      "id": 3,
-      "image": "https://i.ibb.co/wsQzF3T/richDad.png",
-      "name": "Rich Dad Poor Dad",
-      "author": "Robert Kiyosaki",
-      "category": "Business & Economics",
-      "quantity": 12,
-      "rating": 4.7
-    },
-    {
-      "id": 4,
-      "image": "https://i.ibb.co/bskSrcm/thinking-Fast.jpg",
-      "name": "Thinking, Fast and Slow",
-      "author": "Daniel Kahneman",
-      "category": "Business & Economics",
-      "quantity": 10,
-      "rating": 4.6
-    },
-    {
-      "id": 5,
-      "image": "https://i.ibb.co/k39XskL/a-Briefhistoryb.jpg",
-      "name": "A Brief History of Time",
-      "author": "Stephen Hawking",
-      "category": "Science & Technology",
-      "quantity": 8,
-      "rating": 4.8
-    },
-    {
-      "id": 6,
-      "image": "https://i.ibb.co/yqsBc08/sapiensb.png",
-      "name": "Sapiens: A Brief History of Humankind",
-      "author": "Yuval Noah Harari",
-      "category": "Science & Technology",
-      "quantity": 6,
-      "rating": 4.7
-    },
-    {
-      "id": 7,
-      "image": "https://i.ibb.co/ngtNpSY/Gunsb.jpg",
-      "name": "Guns, Germs, and Steel",
-      "author": "Jared Diamond",
-      "category": "History",
-      "quantity": 9,
-      "rating": 4.7
-    },
-    {
-      "id": 8,
-      "image": "https://i.ibb.co/dc1xx8K/history-Ancientb.jpg",
-      "name": "The History of the Ancient World",
-      "author": "Susan Wise Bauer",
-      "category": "History",
-      "quantity": 11,
-      "rating": 4.6
-    }
-  ]
-  
+  {
+    "image": "https://i.ibb.co/QN12zMy/steve-Jobs.jpg",
+    "name": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "category": "Biography",
+    "quantity": 5,
+    "rating": 4.8,
+    "ShortDescription": "A revealing biography of the visionary behind Apple, Steve Jobs.",
+    "BookContent": "Explore the life and career of Steve Jobs, detailing his innovation, struggles, and triumphs in revolutionizing the tech world."
+  },
+  {
+    "image": "https://i.ibb.co/wrh4D9K/the-diary-of-a-young-girl.jpg",
+    "name": "The Diary of a Young Girl",
+    "author": "Anne Frank",
+    "category": "Biography",
+    "quantity": 7,
+    "rating": 4.0,
+    "ShortDescription": "Anne Frank’s poignant diary during her time in hiding in World War II.",
+    "BookContent": "A deeply moving account of a young girl's experiences and reflections during the Holocaust, offering a unique historical perspective."
+  },
+  {
+    "image": "https://i.ibb.co/wsQzF3T/richDad.png",
+    "name": "Rich Dad Poor Dad",
+    "author": "Robert Kiyosaki",
+    "category": "Business & Economics",
+    "quantity": 12,
+    "rating": 4.7,
+    "ShortDescription": "Lessons on wealth-building and financial independence.",
+    "BookContent": "Discover the contrasting financial philosophies of two fathers and learn practical strategies to achieve financial freedom."
+  },
+  {
+    "image": "https://i.ibb.co/bskSrcm/thinking-Fast.jpg",
+    "name": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "category": "Business & Economics",
+    "quantity": 10,
+    "rating": 4.6,
+    "ShortDescription": "An exploration of human decision-making and thought processes.",
+    "BookContent": "Understand the two systems of thinking that shape our judgments, decisions, and behaviors in this groundbreaking book."
+  },
+  {
+    "image": "https://i.ibb.co/k39XskL/a-Briefhistoryb.jpg",
+    "name": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "category": "Science & Technology",
+    "quantity": 8,
+    "rating": 4.8,
+    "ShortDescription": "A look into the mysteries of the universe and time by Stephen Hawking.",
+    "BookContent": "Explore the fundamental questions about the cosmos, from black holes to the Big Bang, in this iconic work of science."
+  },
+  {
+    "image": "https://i.ibb.co/yqsBc08/sapiensb.png",
+    "name": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "category": "Science & Technology",
+    "quantity": 6,
+    "rating": 4.7,
+    "ShortDescription": "A fascinating journey through human history and evolution.",
+    "BookContent": "Trace the origins and development of Homo sapiens, examining culture, economics, and societal transformations."
+  },
+  {
+    "image": "https://i.ibb.co/ngtNpSY/Gunsb.jpg",
+    "name": "Guns, Germs, and Steel",
+    "author": "Jared Diamond",
+    "category": "History",
+    "quantity": 9,
+    "rating": 4.7,
+    "ShortDescription": "A groundbreaking analysis of human societies and their development.",
+    "BookContent": "Discover the environmental and historical factors that shaped civilizations and determined the fate of nations."
+  },
+  {
+    "image": "https://i.ibb.co/dc1xx8K/history-Ancientb.jpg",
+    "name": "The History of the Ancient World",
+    "author": "Susan Wise Bauer",
+    "category": "History",
+    "quantity": 11,
+    "rating": 4.6,
+    "ShortDescription": "A comprehensive guide to ancient civilizations.",
+    "BookContent": "Learn about the rise and fall of ancient empires, tracing their history, culture, and contributions to the modern world."
+  },
+  {
+    "image": "https://i.ibb.co/q7RT63c/book9.png",
+    "name": "The Power of Habit",
+    "author": "Charles Duhigg",
+    "category": "Business & Economics",
+    "quantity": 8,
+    "rating": 4.1,
+    "ShortDescription": "Unlock the science behind habits and how to change them.",
+    "BookContent": "Understand the psychological and scientific principles of habit formation and transformation for personal and professional growth."
+  },
+  {
+    "image": "https://i.ibb.co/KNnSQg5/book10.png",
+    "name": "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future",
+    "author": "Ashlee Vance",
+    "category": "Biography",
+    "quantity": 7,
+    "rating": 4.8,
+    "ShortDescription": "A revealing look at Elon Musk’s life and achievements.",
+    "BookContent": "Dive into the visionary mind of Elon Musk, his entrepreneurial ventures, and his relentless drive to innovate and change the world."
+  },
+  {
+    "image": "https://i.ibb.co/9bLB6fq/book11.jpg",
+    "name": "Team of Rivals",
+    "author": "Doris Kearns Goodwin",
+    "category": "History",
+    "quantity": 6,
+    "rating": 4,
+    "ShortDescription": "An inspiring account of Abraham Lincoln and his cabinet.",
+    "BookContent": "Explore Lincoln's leadership and his ability to unite a divided nation during one of its most challenging times."
+  },
+  {
+    "image": "https://i.ibb.co/VBgFk6j/book12.jpg",
+    "name": "1776",
+    "author": "David McCullough",
+    "category": "History",
+    "quantity": 5,
+    "rating": 4.7,
+    "ShortDescription": "A gripping narrative of America’s birth year.",
+    "BookContent": "Relive the pivotal moments of 1776, focusing on George Washington and the Continental Army's struggle for independence."
+  },
+
+  {
+    "image": "https://i.ibb.co/BKdgwMf/book14.jpg",
+    "name": "Homo Deus: A Brief History of Tomorrow",
+    "author": "Yuval Noah Harari",
+    "category": "Science & Technology",
+    "quantity": 7,
+    "rating": 3.0,
+    "ShortDescription": "An exploration of humanity's future and the challenges posed by technology and artificial intelligence.",
+    "BookContent": "This book delves into the possibilities of a post-human era, exploring artificial intelligence, biotechnology, and the ethical dilemmas of tomorrow."
+  },
+  {
+    "image": "https://i.ibb.co/LNQbrRf/book13.jpg",
+    "name": "The Gene: An Intimate History",
+    "author": "Siddhartha Mukherjee",
+    "category": "Science & Technology",
+    "quantity": 6,
+    "rating": 4.3,
+    "ShortDescription": "A detailed narrative about the history, science, and impact of genetics.",
+    "BookContent": "The book provides an intimate journey through the science of genes, exploring their role in shaping identity, health, and the human future."
+  },
+  {
+    "image": "https://i.ibb.co/wJwKfJ6/book15.jpg",
+    "name": "Zero to One",
+    "author": "Peter Thiel",
+    "category": "Business & Economics",
+    "quantity": 8,
+    "rating": 4.6,
+    "ShortDescription": "A guide to building innovative startups and creating value from nothing.",
+    "BookContent": "Peter Thiel shares unique insights on how entrepreneurs can create groundbreaking businesses that change the world."
+  },
+  {
+    "image": "https://i.ibb.co/xCHtczy/book16.jpg",
+    "name": "The Intelligent Investor",
+    "author": "Benjamin Graham",
+    "category": "Business & Economics",
+    "quantity": 9,
+    "rating": 4.8,
+    "ShortDescription": "A classic book on value investing and financial wisdom.",
+    "BookContent": "This timeless guide provides strategies for making sound investments and managing finances for long-term success."
+  },
+  {
+    "image": "https://i.ibb.co/syFP6KT/book17.jpg",
+    "name": "John Adams",
+    "author": "David McCullough",
+    "category": "Biography",
+    "quantity": 5,
+    "rating": 4.7,
+    "ShortDescription": "An in-depth biography of America's second president, John Adams.",
+    "BookContent": "The book chronicles the life and legacy of John Adams, his role in American independence, and his personal and political challenges."
+  },
+  {
+    "image": "https://i.ibb.co/rfnjTXt/book18.jpg",
+    "name": "The Right Stuff",
+    "author": "Tom Wolfe",
+    "category": "History",
+    "quantity": 6,
+    "rating": 4.6,
+    "ShortDescription": "A gripping account of the early days of America's space program.",
+    "BookContent": "This book captures the daring exploits of test pilots and astronauts who paved the way for space exploration during the Cold War era."
+  },
+  {
+    "image": "https://i.ibb.co/LCLbqk4/book19.png",
+    "name": "Clean Code",
+    "author": "Robert C. Martin",
+    "category": "Science & Technology",
+    "quantity": 7,
+    "rating": 4.7,
+    "ShortDescription": "A manual for writing clean, maintainable, and efficient code.",
+    "BookContent": "Robert C. Martin provides practical advice and techniques for developing code that is both functional and elegant."
+  },
+  {
+    "image": "https://i.ibb.co/6YP10g1/book20.jpg",
+    "name": "The Hard Thing About Hard Things",
+    "author": "Ben Horowitz",
+    "category": "Business & Economics",
+    "quantity": 8,
+    "rating": 4.6,
+    "ShortDescription": "Insights into the challenges of running a startup and making tough decisions.",
+    "BookContent": "Ben Horowitz offers practical advice on navigating the difficulties of entrepreneurship, from hiring to dealing with competition."
+  }
+]
