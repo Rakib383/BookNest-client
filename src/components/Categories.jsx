@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import cover1 from '../assets/images/cover1.jpg'
 import cover2 from '../assets/images/cover3.jpg'
 import cover3 from '../assets/images/cover5.jpg'
@@ -22,7 +23,7 @@ export const Categories = () => {
                         <h2 className="card-title  ">Biography </h2>
                         <p>Explore the inspiring stories of real lives and remarkable achievements.</p>
                         <div className="card-actions">
-                            <button className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">Explore Books</button>
+                            <Link to="/books/Biography" className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">Explore Books</Link>
                         </div>
                     </div>
                 </div>
@@ -38,7 +39,7 @@ export const Categories = () => {
                         <h2 className="card-title  ">Business & Economics </h2>
                         <p>Unlock the secrets to success, strategy, and financial growth.</p>
                         <div className="card-actions">
-                            <button className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">Explore Books</button>
+                            <Link to="/books/Business & Economics" className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">Explore Books</Link>
                         </div>
                     </div>
                 </div>
@@ -54,7 +55,7 @@ export const Categories = () => {
                         <h2 className="card-title  ">Science & Technology</h2>
                         <p>Discover the wonders of innovation, exploration, and the universe.</p>
                         <div className="card-actions">
-                            <button className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">Explore Books</button>
+                            <Link to="/books/Science & Technology" className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">Explore Books</Link>
                         </div>
                     </div>
                 </div>
@@ -70,7 +71,7 @@ export const Categories = () => {
                         <h2 className="card-title  ">History</h2>
                         <p>Journey through the events and stories that shaped our world.</p>
                         <div className="card-actions">
-                            <button className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">Explore Books</button>
+                            <Link to="/books/History" className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">Explore Books</Link>
                         </div>
                     </div>
                 </div>
