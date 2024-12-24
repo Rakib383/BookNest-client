@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 import ReactStars from "react-rating-stars-component";
 
 export const CategoryBooks = () => {
@@ -35,7 +35,7 @@ export const CategoryBooks = () => {
                                                     activeColor="#40916c"
                                                 />,
                                                 <div className="card-actions">
-                                                    <button className="btn  bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white px-7">Details</button>
+                                                    <Link to={`/bookDetails/${book._id}`} className="btn  bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white px-7">Details</Link>
                                                 </div>
                                             </div>
                                         </div>
