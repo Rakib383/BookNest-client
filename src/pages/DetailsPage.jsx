@@ -1,38 +1,46 @@
 import { useLoaderData, } from "react-router-dom"
 import ReactStars from "react-rating-stars-component";
-import { useContext, useState, } from "react";
+import { useContext,  } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import axios from "axios";
+import moment from "moment";
+import Swal from 'sweetalert2'
 
 
 export const DetailsPage = () => {
     const { user } = useContext(AuthContext)
-    
+
     const data = useLoaderData()
-    
+
     const { _id, image, name, author, category, quantity, rating, ShortDescription, BookContent } = data
 
-  
+
 
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
+        const BorrowedDate = moment().format('D/M/YYYY')
         const form = e.target
         const returnDate = e.target.returnDate.value
         const data = {
             Borrower: user.displayName,
             Borrower_email: user.email,
             Book_id: _id,
-            image, name, author, category, quantity, rating, ShortDescription, BookContent,returnDate
+            image, name, author, category, rating, ShortDescription, BookContent, BorrowedDate, returnDate
         }
-        console.log(data)
+
         axios.patch(`http://localhost:5000/books/${_id}/decrease`, {})
             .then(res => {
                 axios.post('http://localhost:5000/borrowedBooks', data)
-                .then(res => {
-                    setUpdate(!update)
-                })
-                .catch(err => console.log(err))
+                    .then(res => {
+                        Swal.fire({
+                            title: "Success!",
+                            text: "Apply successful",
+                            icon: "success"
+                        });
+                        form.reset()
+                    })
+                    .catch(err => console.log(err))
 
             })
             .catch(err => console.log(err))
