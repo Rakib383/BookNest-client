@@ -6,6 +6,7 @@ import { LoginPage } from "../pages/LoginPage";
 import { AllBooksPage } from "../pages/AllBooksPage";
 import { CategoryBooks } from "../pages/CategoryBooks";
 import { DetailsPage } from "../pages/DetailsPage";
+import { UpdateBookPage } from "../pages/UpdateBookPage";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
       {
         path: "bookDetails/:id",
         element: <DetailsPage />,
+        loader: ({ params }) => fetch(`http://localhost:5000/bookDetails/${params.id}`)
+      },
+      {
+        path: "updateBook/:id",
+        element: <UpdateBookPage />,
         loader: ({ params }) => fetch(`http://localhost:5000/bookDetails/${params.id}`)
       }
 

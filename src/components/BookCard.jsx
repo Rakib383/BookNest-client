@@ -1,6 +1,7 @@
 import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
 export const BookCard = ({ book }) => {
-    const { image, name, author, category, rating } = book
+    const {_id, image, name, author, category, rating } = book
     return (
         <div className="card  h-auto shrink-0 w-80 shadow-xl  py-6">
             <figure className=" h-56 mx-auto rounded-none">
@@ -23,7 +24,7 @@ export const BookCard = ({ book }) => {
                     activeColor="#40916c"
                 />,
                 <div className="card-actions">
-                    <button className="btn  bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white px-7">Update</button>
+                    <Link to={`/updateBook/${_id}`} className="btn  bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white px-7">Update</Link>
                 </div>
             </div>
         </div>
