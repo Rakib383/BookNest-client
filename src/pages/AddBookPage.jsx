@@ -1,4 +1,5 @@
 import axios from "axios"
+import { Helmet } from "react-helmet-async"
 import Swal from 'sweetalert2'
 
 export const AddBookPage = () => {
@@ -25,6 +26,9 @@ export const AddBookPage = () => {
     }
     return (
         <div className="px-6 sm:pb-20 bg-[#EEEEEE] ">
+            <Helmet>
+                <title>AddBook</title>
+            </Helmet>
 
             <h2 className="font-black font-charm text-xl md:text-2xl text-primaryColor underline mb-3 sm:mb-6 text-center">Add a New Book</h2>
             <p className="text-gray-600 font-semibold mb-5 md:text-[17px] px-3 w-96 md:w-[420px] mx-auto text-center">Fill out the details below to add a new book to the collection.</p>

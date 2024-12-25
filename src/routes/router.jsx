@@ -9,6 +9,7 @@ import { DetailsPage } from "../pages/DetailsPage";
 import { UpdateBookPage } from "../pages/UpdateBookPage";
 import { AddBookPage } from "../pages/AddbookPage";
 import { BorrowedBooksPage } from "../pages/BorrowedBooksPage";
+import { ErrorPage } from "../pages/ErrorPage";
 
 
 const router = createBrowserRouter([
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
 
     ]
   },
+  {
+    path:"*",
+    element:<ErrorPage/>
+  }
 ]);
 
 export default router

@@ -1,10 +1,11 @@
 import { useLoaderData, } from "react-router-dom"
 import ReactStars from "react-rating-stars-component";
-import { useContext,  } from "react";
+import { useContext, } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import axios from "axios";
 import moment from "moment";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet-async";
 
 
 export const DetailsPage = () => {
@@ -53,7 +54,9 @@ export const DetailsPage = () => {
 
     return (
         <div className="pt-16 sm:pt-24 pb-20 md:pb-28 ">
-
+            <Helmet>
+                <title>DetailsPage</title>
+            </Helmet>
 
             <div className="w-80 sm:w-[510px] mx-auto flex flex-col sm:flex-row items-center card shadow-lg px-6 gap-3 py-6 justify-center bg-white">
                 <div className="w-36 h-44 sm:w-3/5">

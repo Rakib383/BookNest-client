@@ -5,6 +5,7 @@ import { AuthContext } from "../provider/AuthProvider"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 export const RegisterPage = () => {
     const [error, setError] = useState(null)
@@ -50,22 +51,22 @@ export const RegisterPage = () => {
         createUser(email, password)
             .then((res) => {
                 const createdAt = res.user.metadata.creationTime
-                const user = {name,email,createdAt}
-                axios.post('http://localhost:5000/newUser',user)
-                .then(res => console.log(res))
-                
-                
+                const user = { name, email, createdAt }
+                axios.post('http://localhost:5000/newUser', user)
+                    .then(res => console.log(res))
+
+
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
                         successNotify()
                         setUser(res.user)
                         navigate("/")
 
-                        
+
                     })
                     .catch(err => console.log(err))
             })
-            .catch(err =>  {
+            .catch(err => {
                 errorNotify()
                 console.log(err)
             })
@@ -78,20 +79,23 @@ export const RegisterPage = () => {
                 const createdAt = result.user.metadata.creationTime
                 const name = result.user.displayName
                 const email = result.user.email
-                const user = {name,email,createdAt}
-                axios.post('http://localhost:5000/newUser',user)
-                .then(res => console.log(res))
+                const user = { name, email, createdAt }
+                axios.post('http://localhost:5000/newUser', user)
+                    .then(res => console.log(res))
                 setUser(result.user)
                 navigate("/")
                 successNotify()
             })
-            .catch(err =>  {
+            .catch(err => {
                 errorNotify()
                 console.log(err)
             })
     }
     return (
         <div className="flex flex-col justify-center items-center mt-8 md:mt-12 pb-12">
+            <Helmet>
+                <title>Register</title>
+            </Helmet>
 
             <h2 className="text-xl font-bold text-sky-400 mb-8 w-64 text-center font-charm ">Create Your Account & Get Started Today!</h2>
             <div className="md:flex items-center gap-16 lg:gap-20 md:mr-10 ">
@@ -142,10 +146,10 @@ export const RegisterPage = () => {
                         <button onClick={handleSignInWithGoogle} className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white w-full">Continue with Google</button>
                     </div>
                     <p className="text-center mb-4 dark:text-black">Already have an account? <Link to="/login" className="text-red-500 font-bold underline">Login</Link></p>
-                   
+
                 </div>
             </div>
-            
+
         </div>
     )
 }

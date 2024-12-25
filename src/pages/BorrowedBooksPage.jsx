@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../provider/AuthProvider"
 import axios from "axios";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet-async";
 
 export const BorrowedBooksPage = () => {
     const { user } = useContext(AuthContext);
@@ -60,6 +61,9 @@ export const BorrowedBooksPage = () => {
     }
     return (
         <div className="bg-[#eee] mt-5 sm:pb-24">
+            <Helmet>
+                <title>Your Borrowed Books</title>
+            </Helmet>
             <h2 className="font-black font-charm text-xl md:text-2xl text-primaryColor underline mb-3 sm:mb-4 text-center">Borrowed Book List</h2>
             <p className="text-gray-600 font-semibold  md:text-[17px] px-3 w-96 md:w-[420px] mx-auto text-center">Review your borrowed books and keep track of the return dates.</p>
 
