@@ -13,17 +13,17 @@ export const AllBooksPage = () => {
     const { user } = useContext(AuthContext)
     const [loading, setLoading] = useState(false)
     const [books, setBooks] = useState([])
-    const [allBooks,setAllBooks] = useState(null)
+    const [allBooks, setAllBooks] = useState(null)
     const [tableView, setTableView] = useState(false)
-    
+
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/allBooks?email=${user?.email}`, { withCredentials: true })
+        axios.get(`https://book-nest-server-zeta.vercel.app/allBooks?email=${user?.email}`, { withCredentials: true })
             .then(res => {
                 setBooks(res.data)
-               setAllBooks(res.data)
+                setAllBooks(res.data)
             })
-    },[])
+    }, [])
 
     const handleBooksData = (e) => {
         setLoading(true)

@@ -14,7 +14,7 @@ export const UpdateBookPage = () => {
         const formData = new FormData(form)
         const updateData = Object.fromEntries(formData.entries())
 
-        axios.patch(`http://localhost:5000/updateBook/${_id}`, updateData)
+        axios.patch(`https://book-nest-server-zeta.vercel.app/updateBook/${_id}`, updateData)
             .then(() => {
                 Swal.fire({
                     title: "Success!",

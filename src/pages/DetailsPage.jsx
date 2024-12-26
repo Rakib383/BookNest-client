@@ -20,7 +20,7 @@ export const DetailsPage = () => {
     useEffect(() => {
 
         const email = user.email
-        axios.post('http://localhost:5000/search', { email, _id })
+        axios.post('https://book-nest-server-zeta.vercel.app/search', { email, _id })
             .then(res => {
                 if (res.data) {
                     setIsBorrowed(true)
@@ -43,9 +43,9 @@ export const DetailsPage = () => {
             image, name, author, category, rating, ShortDescription, BookContent, BorrowedDate, returnDate
         }
 
-        axios.patch(`http://localhost:5000/books/${_id}/decrease`, {})
+        axios.patch(`https://book-nest-server-zeta.vercel.app/books/${_id}/decrease`, {})
             .then(res => {
-                axios.post('http://localhost:5000/borrowedBooks', data)
+                axios.post('https://book-nest-server-zeta.vercel.app/borrowedBooks', data)
                     .then(res => {
                         Swal.fire({
                             title: "Success!",
@@ -77,9 +77,9 @@ export const DetailsPage = () => {
             <div className="w-80 sm:w-[510px] mx-auto flex flex-col sm:flex-row items-center card shadow-lg px-6 gap-3 py-6 justify-center bg-white">
                 <div className="w-36 h-44 sm:w-3/5 relative">
                     <img src={image} className=" w-full h-full pb-2" alt="" />
-                   {
-                    isBorrowed &&  <p className="text-white text-base font-bold font-charm absolute -rotate-[37deg] -right-3 sm: bottom-0.5 bg-secondaryColor px-2 py-0.5 ">Borrowed</p>
-                   }
+                    {
+                        isBorrowed && <p className="text-white text-base font-bold font-charm absolute -rotate-[37deg] -right-3 sm: bottom-0.5 bg-secondaryColor px-2 py-0.5 ">Borrowed</p>
+                    }
                 </div>
                 <div className="text-center pt-1">
                     <h3 className="font-semibold">{name}</h3>
@@ -98,11 +98,11 @@ export const DetailsPage = () => {
                     <p className="text-center ">Description: {ShortDescription}</p>
                     <p>{BookContent}</p>
                     {
-                            <button disabled={!quantity || isBorrowed} onClick={() => {
-                                document.getElementById('modal_1').showModal()
+                        <button disabled={!quantity || isBorrowed} onClick={() => {
+                            document.getElementById('modal_1').showModal()
 
-                            }} className={`btn  bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white px-7 sm:mt-3 mt-2`}>Borrow</button>
-                        }
+                        }} className={`btn  bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white px-7 sm:mt-3 mt-2`}>Borrow</button>
+                    }
 
 
                 </div>

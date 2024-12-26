@@ -9,12 +9,12 @@ import { AuthContext } from "../provider/AuthProvider";
 
 
 export const NewArrival = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const [books, setBooks] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:5000/latestBooks")
-        .then(res => setBooks(res.data))
+        axios.get("https://book-nest-server-zeta.vercel.app/latestBooks")
+            .then(res => setBooks(res.data))
 
     })
 
@@ -36,17 +36,17 @@ export const NewArrival = () => {
                             slidesPerView: 3,
                         },
                     }}
-                    
+
                     autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,
                     }}
                     modules={[Autoplay]}
 
-                    >
+                >
                     {
-                        books.map((book,ind) => <SwiperSlide className="rounded-xl" key={ind}>
-                            <NewBookCard book={book}  />
+                        books.map((book, ind) => <SwiperSlide className="rounded-xl" key={ind}>
+                            <NewBookCard book={book} />
                         </SwiperSlide>)
                     }
                 </Swiper>

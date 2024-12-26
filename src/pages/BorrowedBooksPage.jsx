@@ -5,19 +5,19 @@ import Swal from 'sweetalert2'
 import { Helmet } from "react-helmet-async";
 
 export const BorrowedBooksPage = () => {
-    const { user,setLoading } = useContext(AuthContext);
+    const { user, setLoading } = useContext(AuthContext);
 
     const [books, setbooks] = useState([])
 
-    
+
     useEffect(() => {
-       
-        if(!user) {
+
+        if (!user) {
             setLoading(true)
         }
         else {
-            
-            axios.post('http://localhost:5000/myBorrowedBooks', { email: user.email })
+
+            axios.post('https://book-nest-server-zeta.vercel.app/myBorrowedBooks', { email: user.email })
                 .then(res => {
                     setbooks(res.data)
                     setLoading(false)
@@ -40,9 +40,9 @@ export const BorrowedBooksPage = () => {
             confirmButtonText: "Yes, Return it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.patch(`http://localhost:5000/books/${id}/increase`)
+                axios.patch(`https://book-nest-server-zeta.vercel.app/books/${id}/increase`)
                     .then((res) => {
-                        axios.delete(`http://localhost:5000/borrowedBooks/${id}`)
+                        axios.delete(`https://book-nest-server-zeta.vercel.app/borrowedBooks/${id}`)
                             .then(res => {
                                 // console.log(res.data)
                             })

@@ -14,7 +14,7 @@ export const AddBookPage = () => {
         const data = Object.fromEntries(formData.entries())
         data.rating= +data.rating,
         data.quantity= +data.quantity
-        axios.post(`http://localhost:5000/addBook?email=${user?.email}`,data,{ withCredentials: true })
+        axios.post(`https://book-nest-server-zeta.vercel.app/addBook?email=${user?.email}`,data,{ withCredentials: true })
         .then(() => {
              Swal.fire({
                             title: "Success!",
