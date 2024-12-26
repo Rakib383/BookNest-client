@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import register from "../assets/images/registerPic2.svg"
 import { useContext, useState } from "react"
 import { AuthContext } from "../provider/AuthProvider"
@@ -12,6 +12,7 @@ export const RegisterPage = () => {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     const { createUser, updateUserProfile, setUser, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate()
+    const location = useLocation()
 
     const successNotify = () => {
         toast.success("Signup successful!", {
@@ -60,7 +61,7 @@ export const RegisterPage = () => {
                     .then(() => {
                         successNotify()
                         setUser(res.user)
-                        navigate("/")
+                        navigate(location.state ? location.state : "/")
 
 
                     })
@@ -83,7 +84,7 @@ export const RegisterPage = () => {
                 axios.post('http://localhost:5000/newUser', user)
                     .then(res => console.log(res))
                 setUser(result.user)
-                navigate("/")
+                navigate(location.state ? location.state : "/")
                 successNotify()
             })
             .catch(err => {
@@ -92,7 +93,7 @@ export const RegisterPage = () => {
             })
     }
     return (
-        <div className="flex flex-col justify-center items-center mt-8 md:mt-12 pb-12">
+        <div className="flex flex-col justify-center items-center mt-8 md:mt-12 bg-[#eee] pb-14 sm:pb-16">
             <Helmet>
                 <title>Register</title>
             </Helmet>

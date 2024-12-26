@@ -16,7 +16,7 @@ export const BookCard = ({ book }) => {
                 <p>{category}</p>
                 <ReactStars
                     count={5}
-                    value={rating}
+                    value={+rating}
                     size={24}
                     isHalf={true}
                     edit={false}

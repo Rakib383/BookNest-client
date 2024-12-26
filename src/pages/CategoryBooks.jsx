@@ -31,7 +31,7 @@ export const CategoryBooks = () => {
                                 <p className="font-semibold">Quantity: {book.quantity}</p>
                                 <ReactStars
                                     count={5}
-                                    value={book.rating}
+                                    value={+book.rating}
                                     size={24}
                                     isHalf={true}
                                     edit={false}

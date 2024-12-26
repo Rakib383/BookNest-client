@@ -5,17 +5,22 @@ import Swal from 'sweetalert2'
 import { Helmet } from "react-helmet-async";
 
 export const BorrowedBooksPage = () => {
-    const { user } = useContext(AuthContext);
+    const { user,setLoading } = useContext(AuthContext);
 
     const [books, setbooks] = useState([])
 
-
+    
     useEffect(() => {
-        if (user?.email) {
-            console.log(user.email)
+       
+        if(!user) {
+            setLoading(true)
+        }
+        else {
+            
             axios.post('http://localhost:5000/myBorrowedBooks', { email: user.email })
                 .then(res => {
                     setbooks(res.data)
+                    setLoading(false)
                 })
                 .catch(err => console.log(err))
 
@@ -39,9 +44,9 @@ export const BorrowedBooksPage = () => {
                     .then((res) => {
                         axios.delete(`http://localhost:5000/borrowedBooks/${id}`)
                             .then(res => {
-                                console.log(res.data)
+                                // console.log(res.data)
                             })
-                        console.log(res.data)
+                        // console.log(res.data)
                         const filteredBooks = books.filter(book => book.Book_id !== id)
                         setbooks(filteredBooks)
 
@@ -70,10 +75,10 @@ export const BorrowedBooksPage = () => {
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-6 sm:gap-9 mt-7 sm:mt-12 pb-14">
 
                 {
-                    books.length === 0 && <div className="flex flex-col items-center">
+                    books.length === 0 && <div className="flex flex-col items-center pb-24">
 
                         <img className="w-48 sm:w-72" src="https://staticmania.cdn.prismic.io/staticmania/a8befbc0-90ae-4835-bf37-8cd1096f450f_Property+1%3DSearch_+Property+2%3DSm.svg" alt="" />
-                        <h2 className="text-lg sm:text-xl text-secondaryColor">No Data Found</h2> </div>
+                        <h2 className="text-lg sm:text-xl text-secondaryColor ">No Data Found</h2> </div>
                 }
                 {
                     books.map((book, idx) => (

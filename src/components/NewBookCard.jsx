@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom"
 
 export const NewBookCard = ({book}) => {
-    const {image,name,author,category} = book
+    const {_id,image,name,author,category} = book
 
     return (
         <div className="card h-auto shrink-0 w-auto  py-7">
@@ -15,7 +16,7 @@ export const NewBookCard = ({book}) => {
                 <p>{author}</p>
                 <p>{category}</p>
                 <div className="card-actions">
-                    <button className="btn mt-1 bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">See Details</button>
+                    <Link to={`/bookDetails/${_id}`} className="btn mt-1 bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">See Details</Link>
                 </div>
             </div>
         </div>

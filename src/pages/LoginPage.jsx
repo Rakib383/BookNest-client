@@ -48,8 +48,8 @@ export const LoginPage = () => {
                 const user = result.user;
                 successNotify()
                 setUser(user);
-                // navigate(location?.state ? location.state : "/")
-                navigate("/")
+               
+                 navigate(location.state ? location.state : "/")
 
 
             })
@@ -66,8 +66,7 @@ export const LoginPage = () => {
                 const user = result.user;
                 setUser(user);
                 successNotify()
-                navigate("/")
-                // navigate(location?.state ? location.state : "/")
+                navigate(location.state ? location.state : "/")
 
             })
             .catch((error) => {
