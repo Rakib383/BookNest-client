@@ -1,34 +1,46 @@
-import { useLoaderData } from "react-router-dom"
+
 import { BookCard } from "../components/BookCard";
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TfiViewGrid, TfiViewList } from "react-icons/tfi";
 import { TableView } from "../components/TableView";
+import axios from "axios";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 
 export const AllBooksPage = () => {
-    const data = useLoaderData();
+    const { user } = useContext(AuthContext)
     const [loading, setLoading] = useState(false)
-    const [books, setBooks] = useState(data)
+    const [books, setBooks] = useState([])
+    const [allBooks,setAllBooks] = useState(null)
     const [tableView, setTableView] = useState(false)
+    
+
+    useEffect(() => {
+        axios.get(`http://localhost:5000/allBooks?email=${user?.email}`, { withCredentials: true })
+            .then(res => {
+                setBooks(res.data)
+               setAllBooks(res.data)
+            })
+    },[])
 
     const handleBooksData = (e) => {
         setLoading(true)
         setTimeout(() => {
 
             if (e.target.value === "Available") {
-                const availableBooks = data.filter(book => book.quantity > 0)
+                const availableBooks = allBooks.filter(book => book.quantity > 0)
                 setBooks(availableBooks)
 
             }
             else {
-                setBooks(data)
+                setBooks(allBooks)
 
             }
             setLoading(false)
 
-        }, 1500)
+        }, 1000)
     }
 
 
@@ -44,7 +56,7 @@ export const AllBooksPage = () => {
             <p className="text-gray-600 font-semibold mt-2 md:text-[17px] px-3 w-96 md:w-[420px] mx-auto">Dive Into Our Diverse Library of Knowledge.Explore Books That Shape Minds and Transform Lives.  </p>
             <div >
 
-                <select onChange={handleBooksData} name="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-40 mb-2 mx-auto mt-3 text-center">
+                <select onChange={handleBooksData} name="" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-40 mb-2 mx-auto mt-3 text-center">
 
                     <option value="All">All Books</option>
                     <option value="Available">Available Books</option>

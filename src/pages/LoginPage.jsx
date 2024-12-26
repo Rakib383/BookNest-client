@@ -4,6 +4,7 @@ import { AuthContext } from "../provider/AuthProvider"
 import { toast } from "react-toastify"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { Helmet } from "react-helmet-async"
+import axios from "axios"
 
 
 export const LoginPage = () => {
@@ -48,7 +49,11 @@ export const LoginPage = () => {
                 const user = result.user;
                 successNotify()
                 setUser(user);
-               
+
+                const email = result.user.email
+                axios.post('http://localhost:5000/jwt',{email},{withCredentials:true})
+                .then(res => console.log(res.data))
+
                  navigate(location.state ? location.state : "/")
 
 

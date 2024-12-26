@@ -56,7 +56,6 @@ export const RegisterPage = () => {
                 axios.post('http://localhost:5000/newUser', user)
                     .then(res => console.log(res))
 
-
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
                         successNotify()

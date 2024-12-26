@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { NewBookCard } from "./NewBookCard"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import axios from "axios";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 export const NewArrival = () => {
+    const {user} = useContext(AuthContext)
     const [books, setBooks] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/allBooks')
-            .then(res => res.json())
-            .then(data => setBooks(data))
+        axios.get("http://localhost:5000/latestBooks")
+        .then(res => setBooks(res.data))
 
-    }, [])
+    })
 
     return (
         <div className="text-center py-3  bg-[#EEEEEE] pb-10 lg:pb-16">

@@ -1,8 +1,11 @@
 import axios from "axios"
+import { useContext } from "react"
 import { Helmet } from "react-helmet-async"
 import Swal from 'sweetalert2'
+import { AuthContext } from "../provider/AuthProvider"
 
 export const AddBookPage = () => {
+    const { user } = useContext(AuthContext)
 
     const handleAddBook = (e) => {
         e.preventDefault()
@@ -11,7 +14,7 @@ export const AddBookPage = () => {
         const data = Object.fromEntries(formData.entries())
         data.rating= +data.rating,
         data.quantity= +data.quantity
-        axios.post("http://localhost:5000/addBook",data)
+        axios.post(`http://localhost:5000/addBook?email=${user?.email}`,data,{ withCredentials: true })
         .then(() => {
              Swal.fire({
                             title: "Success!",

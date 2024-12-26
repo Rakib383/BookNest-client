@@ -34,7 +34,6 @@ const router = createBrowserRouter([
       {
         path: "allBooks",
         element: <PrivateRoute><AllBooksPage /></PrivateRoute>,
-        loader: () => fetch("http://localhost:5000/allBooks")
       },
       {
         path: "books/:category",
