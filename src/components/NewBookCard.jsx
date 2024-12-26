@@ -8,7 +8,6 @@ export const NewBookCard = ({book}) => {
             <figure className=" h-60 mx-auto">
                 <img
                     src={image}
-
                     className="rounded-xl h-full w-full object-cover" />
             </figure>
             <div className="card-body p-4 pb-0 gap-0 items-center  grow-0  text-center">

@@ -72,7 +72,7 @@ export const BorrowedBooksPage = () => {
             <h2 className="font-black font-charm text-xl md:text-2xl text-primaryColor underline mb-3 sm:mb-4 text-center">Borrowed Book List</h2>
             <p className="text-gray-600 font-semibold  md:text-[17px] px-3 w-96 md:w-[420px] mx-auto text-center">Review your borrowed books and keep track of the return dates.</p>
 
-            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-6 sm:gap-9 mt-7 sm:mt-12 pb-14">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-6 sm:gap-9 mt-7 sm:mt-12 pb-14 px-3">
 
                 {
                     books.length === 0 && <div className="flex flex-col items-center pb-24">
