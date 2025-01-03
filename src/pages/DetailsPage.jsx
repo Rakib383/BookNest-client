@@ -6,12 +6,14 @@ import axios from "axios";
 import moment from "moment";
 import Swal from 'sweetalert2'
 import { Helmet } from "react-helmet-async";
+import { Loading } from "../components/Loading";
 
 
 export const DetailsPage = () => {
     const { user } = useContext(AuthContext)
     const [isBorrowed, setIsBorrowed] = useState(false)
     const data = useLoaderData()
+    const [loading, setloading] = useState(true)
 
     const { _id, image, name, author, category, quantity, rating, ShortDescription, BookContent } = data
 
@@ -23,7 +25,11 @@ export const DetailsPage = () => {
         axios.post('https://book-nest-server-zeta.vercel.app/search', { email, _id })
             .then(res => {
                 if (res.data) {
+                    setloading(false)
                     setIsBorrowed(true)
+                }
+                else {
+                    setloading(false)
                 }
 
             })
@@ -32,6 +38,7 @@ export const DetailsPage = () => {
 
 
     const handleFormSubmit = (e) => {
+        setIsBorrowed(true)
         e.preventDefault()
         const BorrowedDate = moment().format('D/M/YYYY')
         const form = e.target
@@ -52,7 +59,7 @@ export const DetailsPage = () => {
                             text: "Apply successful",
                             icon: "success"
                         });
-                        setIsBorrowed(true)
+                       
                         form.reset()
                     })
                     .catch(err => console.log(err))
@@ -67,47 +74,50 @@ export const DetailsPage = () => {
     }
 
     return (
-        <div className="pt-14 sm:pt-16 pb-20 md:pb-28 bg-[#eee]">
-            <Helmet>
-                <title>DetailsPage</title>
-            </Helmet>
+        <>
+            {
+                loading ? <Loading /> : <div className="pt-10 sm:pt-16 pb-20 md:pb-28 bg-[#eee]">
+                    <Helmet>
+                        <title>DetailsPage</title>
+                    </Helmet>
+                    <h2 className="font-black font-charm text-xl md:text-2xl text-primaryColor text-center mb-8 sm:mb-10 underline">Book Details</h2>
 
-            <h2 className="font-black font-charm text-xl md:text-2xl text-primaryColor text-center mb-8 sm:mb-10 underline">Book Details</h2>
+                    <div className="w-80 sm:w-[510px] mx-auto flex flex-col sm:flex-row items-center card shadow-lg px-6 gap-3 py-6 justify-center bg-white">
+                        <div className="w-36 h-44 sm:w-3/5 relative">
+                            <img src={image} className=" w-full h-full pb-2" alt="" />
+                            {
+                                isBorrowed && <p className="text-white text-base font-bold font-charm absolute -rotate-[37deg] -right-3 sm: bottom-0.5 bg-secondaryColor px-2 py-0.5 ">Borrowed</p>
+                            }
+                        </div>
+                        <div className="text-center pt-1">
+                            <h3 className="font-semibold">{name}</h3>
+                            <p>By {author}</p>
+                            <p>Category: {category}</p>
+                            <p>Quantity: {quantity}</p>
 
-            <div className="w-80 sm:w-[510px] mx-auto flex flex-col sm:flex-row items-center card shadow-lg px-6 gap-3 py-6 justify-center bg-white">
-                <div className="w-36 h-44 sm:w-3/5 relative">
-                    <img src={image} className=" w-full h-full pb-2" alt="" />
-                    {
-                        isBorrowed && <p className="text-white text-base font-bold font-charm absolute -rotate-[37deg] -right-3 sm: bottom-0.5 bg-secondaryColor px-2 py-0.5 ">Borrowed</p>
-                    }
+                            <div className="w-28 mx-auto"> <ReactStars
+                                count={5}
+                                value={+rating}
+                                size={24}
+                                isHalf={true}
+                                edit={false}
+                                activeColor="#40916c"
+                            /></div>
+                            <p className="text-center ">Description: {ShortDescription}</p>
+                            <p>{BookContent}</p>
+                            {
+                                <button disabled={!quantity || isBorrowed} onClick={() => {
+                                    document.getElementById('modal_1').showModal()
+
+                                }} className={`btn  bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white px-7 sm:mt-3 mt-2`}>Borrow</button>
+                            }
+
+
+                        </div>
+
+                    </div>
                 </div>
-                <div className="text-center pt-1">
-                    <h3 className="font-semibold">{name}</h3>
-                    <p>By {author}</p>
-                    <p>Category: {category}</p>
-                    <p>Quantity: {quantity}</p>
-
-                    <div className="w-28 mx-auto"> <ReactStars
-                        count={5}
-                        value={+rating}
-                        size={24}
-                        isHalf={true}
-                        edit={false}
-                        activeColor="#40916c"
-                    /></div>
-                    <p className="text-center ">Description: {ShortDescription}</p>
-                    <p>{BookContent}</p>
-                    {
-                        <button disabled={!quantity || isBorrowed} onClick={() => {
-                            document.getElementById('modal_1').showModal()
-
-                        }} className={`btn  bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white px-7 sm:mt-3 mt-2`}>Borrow</button>
-                    }
-
-
-                </div>
-
-            </div>
+            }
 
             {/* modal for Borrow */}
 
@@ -133,14 +143,14 @@ export const DetailsPage = () => {
                         <input name="returnDate" type="date" className="input w-56 input-bordered" required />
 
                     </div>
-                    <div className="modal-actio justify-center">
-                        <button type="submit" className="btn  bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white px-7 sm:mt-3 ">Submit</button>
+                    <div className="modal-action justify-center">
+                        <button type="submit" className="btn  bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white px-7 ">Submit</button>
                     </div>
                 </form>
 
             </dialog>
 
 
-        </div>
+        </>
     )
 }

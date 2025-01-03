@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom"
+import { Outlet, ScrollRestoration } from "react-router-dom"
 import { Navbar } from "../components/Navbar"
 import { Footer } from "../components/Footer"
 import { ToastContainer } from "react-toastify"
@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify"
 export const RootLayout = () => {
     return (
         <div>
+            <ScrollRestoration/>
             <header>
                 <Navbar />
             </header>
