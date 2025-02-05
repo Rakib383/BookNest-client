@@ -3,10 +3,11 @@ import cover1 from '../assets/images/cover1.jpg'
 import cover2 from '../assets/images/cover3.jpg'
 import cover3 from '../assets/images/cover5.jpg'
 import cover4 from '../assets/images/cover7.jpeg'
+import { motion } from "motion/react"
 export const Categories = () => {
     return (
         <div className="text-center py-3  bg-[#EEEEEE] pb-10 lg:pb-16">
-            <h3 className="font-bold text-lg md:text-xl">Step Into Your Favorite <span className="font-charm text-2xl md:text-3xl text-primaryColor">Genre</span></h3>
+            <h3 className="font-bold text-lg md:text-xl">Step Into Your Favorite <motion.span animate={{transition:{duration:7}}} whileInView={{scale:5}} className="font-charm text-2xl md:text-3xl text-primaryColor">Genre</motion.span></h3>
             <p className="text-gray-700 font-semibold mt-2 md:text-[17px]">Find Books Tailored to Your Interests and Passions</p>
             <div className='mt-7 lg:mt-10 flex flex-wrap justify-center mx-auto max-w-[650px] xl:max-w-[1340px]  px-5  gap-8 xl:gap-10'>
                 {/* category cards */}

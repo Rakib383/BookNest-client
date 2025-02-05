@@ -62,7 +62,6 @@ export const AllBooksPage = () => {
                     <option value="Available">Available Books</option>
                 </select>
 
-
             </div>
 
             <div className="flex justify-end gap-3 mr-2 sm:pr-0 mt-6 ">

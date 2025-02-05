@@ -4,14 +4,14 @@ export const NewBookCard = ({book}) => {
     const {_id,image,name,author,category} = book
 
     return (
-        <div className="card rounded-none h-auto shrink-0 w-auto  py-7">
+        <div className="card rounded-none h-auto  shrink-0 w-80  py-7">
             <figure className=" h-60 mx-auto">
                 <img
                     src={image}
                     className=" h-full w-full object-cover" />
             </figure>
             <div className="card-body p-4 pb-0 gap-0 items-center  grow-0  text-center">
-                <h2 className="text-lg font-bold">{name}</h2>
+                <h2 className="text-base font-bold">{name}</h2>
                 <p>{author}</p>
                 <p>{category}</p>
                 <div className="card-actions">

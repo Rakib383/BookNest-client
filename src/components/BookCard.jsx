@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const BookCard = ({ book }) => {
     const {_id, image, name, author, category, rating } = book
     return (
-        <div className="card  h-auto shrink-0 w-80 shadow-xl  py-6">
+        <div className="card  h-auto shrink-0 w-80 shadow-lg  py-6">
             <figure className=" h-56 mx-auto rounded-none">
                 <img
                     src={image}

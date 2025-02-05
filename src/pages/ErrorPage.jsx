@@ -1,5 +1,5 @@
 
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import {  FaArrowAltCircleRight } from "react-icons/fa";
 import { FaFaceSadTear } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import errorPic from "../assets/images/ErrorPic.svg"
