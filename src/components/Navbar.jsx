@@ -7,12 +7,12 @@ import { AuthContext } from "../provider/AuthProvider";
 import { Tooltip } from 'react-tooltip'
 export const Navbar = () => {
 
-    const { user,logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     return (
 
 
-        <div className="navbar min-h-auto  max-w-7xl sm:px-5    fixed left-1/2 transform -translate-x-1/2 z-10 bg-white/80 ">
+        <div className="navbar  md:h-[72px]  max-w-7xl mx-auto sm:px-5    ">
             <div className="navbar-start ">
                 <div className="dropdown lg:hidden ">
                     <div tabIndex={0} role="button" className="btn pl-1 pr-0.5 btn-ghost lg:hidden hover:bg-white dark:hover:bg-black">

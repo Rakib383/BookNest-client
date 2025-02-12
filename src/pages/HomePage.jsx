@@ -3,6 +3,7 @@ import { Categories } from "../components/Categories"
 import { Mission } from "../components/Mission"
 import { NewArrival } from "../components/NewArrival"
 import { Hero } from './../components/Hero';
+import { Authors } from "../components/Authors";
 
 export const HomePage = () => {
     return (
@@ -14,6 +15,7 @@ export const HomePage = () => {
             <Mission />
             <Categories />
             <NewArrival />
+            <Authors/>
         </div>
     )
 }

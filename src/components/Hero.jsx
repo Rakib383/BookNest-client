@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css';
 import '../styles/CarouselStyles.css'
-import library1 from '../assets/images/library7.jpg'
+import library1 from '../assets/images/library9.jpg'
 import library2 from '../assets/images/library8.jpg'
 import library3 from '../assets/images/library5.jpg'
 import library4 from '../assets/images/library6.jpg'

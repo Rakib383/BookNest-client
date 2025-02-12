@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
                 axios.post('https://book-nest-server-zeta.vercel.app/jwt', user, { withCredentials: true })
             }
             else {
-                axios.post("https://book-nest-server-zeta.vercel.app/logOut", {}, { withCredentials: true })
+                axios.post("http://localhost:5000/logOut", {}, { withCredentials: true })
             }
         })
 

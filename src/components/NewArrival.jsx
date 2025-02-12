@@ -15,7 +15,7 @@ export const NewArrival = () => {
     const [books, setBooks] = useState([])
 
     useEffect(() => {
-        axios.get("https://book-nest-server-zeta.vercel.app/latestBooks")
+        axios.get("http://localhost:5000/latestBooks")
             .then(res => setBooks(res.data))
 
     })
@@ -35,7 +35,7 @@ export const NewArrival = () => {
                         1024: {
                             slidesPerView: 2.5, // For large screens
                             spaceBetween: 50,
-                            centeredSlides:false
+                            centeredSlides: false
                         },
                         768: {
                             slidesPerView: 2,
