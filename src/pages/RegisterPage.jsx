@@ -145,7 +145,7 @@ export const RegisterPage = () => {
                     <div className="w-64 md:w-72 mx-auto mb-3">
                         <button onClick={handleSignInWithGoogle} className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white w-full">Continue with Google</button>
                     </div>
-                    <p className="text-center mb-4 dark:text-black">Already have an account? <Link to="/login" className="text-red-500 font-bold underline">Login</Link></p>
+                    <p className="text-center mb-4 dark:text-black">Already have an account? <Link to="/login" className="text-primaryColor font-bold underline">Login</Link></p>
 
                 </div>
             </div>

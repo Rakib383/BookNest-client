@@ -12,7 +12,7 @@ export const Navbar = () => {
     return (
 
 
-        <div className="navbar min-h-auto  max-w-7xl sm:px-5  mx-auto md:p-5 ">
+        <div className="navbar min-h-auto  max-w-7xl sm:px-5    fixed left-1/2 transform -translate-x-1/2 z-10 bg-white/80 ">
             <div className="navbar-start ">
                 <div className="dropdown lg:hidden ">
                     <div tabIndex={0} role="button" className="btn pl-1 pr-0.5 btn-ghost lg:hidden hover:bg-white dark:hover:bg-black">
@@ -23,6 +23,7 @@ export const Navbar = () => {
                         className=" dark:bg-gray-800 bg-gray-100 menu z-10 menu-sm dropdown-content  rounded-box  mt-1 w-52 p-2 shadow">
                         <NavLink to="/" className="px-2.5 py-1.5   hover:text-white rounded-md hover:bg-gray-400">Home</NavLink>
                         <NavLink to="/allBooks" className="px-2.5 py-1.5   hover:text-white rounded-md hover:bg-gray-400">All Books</NavLink>
+                        <NavLink to="/membership" className="px-2.5 py-1.5   hover:text-white rounded-md hover:bg-gray-400">Membership</NavLink>
                         <NavLink to="/addBook" className="px-2.5 py-1.5   hover:text-white rounded-md hover:bg-gray-400">Add Book</NavLink>
                         <NavLink to="/borrowedBooks" className="px-2.5 py-1.5   hover:text-white rounded-md hover:bg-gray-400">Borrowed Books</NavLink>
 
@@ -42,6 +43,7 @@ export const Navbar = () => {
                 <ul className=" hidden lg:flex gap-2 xl:gap-4 font-bold lg:text-[17px] ">
                     <NavLink to="/" className="px-2.5 py-1.5   hover:text-white rounded-md hover:bg-gray-400">Home</NavLink>
                     <NavLink to="/allBooks" className="px-2.5 py-1.5  hover:text-white rounded-md hover:bg-gray-400">All Books</NavLink>
+                    <NavLink to="/membership" className="px-2.5 py-1.5   hover:text-white rounded-md hover:bg-gray-400">Membership</NavLink>
                     <NavLink to="/addBook" className="px-2.5 py-1.5   hover:text-white rounded-md hover:bg-gray-400">Add Book</NavLink>
 
                     <NavLink to="/borrowedBooks" className="px-2.5 py-1.5   hover:text-white rounded-md hover:bg-gray-400">Borrowed Books</NavLink>

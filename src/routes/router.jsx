@@ -11,6 +11,7 @@ import { AddBookPage } from "../pages/AddbookPage";
 import { BorrowedBooksPage } from "../pages/BorrowedBooksPage";
 import { ErrorPage } from "../pages/ErrorPage";
 import { PrivateRoute } from "./PrivateRoute";
+import Membership from "../pages/Membership";
 
 
 const router = createBrowserRouter([
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
       },
       {
         path: "allBooks",
-        element: <PrivateRoute><AllBooksPage /></PrivateRoute>,
+        element: <AllBooksPage />,
+      },
+      {
+        path: "membership",
+        element: <Membership />,
       },
       {
         path: "books/:category",

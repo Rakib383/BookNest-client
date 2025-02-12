@@ -5,12 +5,14 @@ import { ToastContainer } from "react-toastify"
 
 export const RootLayout = () => {
     return (
-        <div>
-            <ScrollRestoration/>
+        <div >
+            <ScrollRestoration />
             <header>
                 <Navbar />
             </header>
-            <Outlet />
+            <main className="pt-16">
+                <Outlet  />
+            </main>
             <footer>
                 <Footer />
             </footer>

@@ -6,7 +6,7 @@ import { Hero } from './../components/Hero';
 
 export const HomePage = () => {
     return (
-        <div>
+        <div >
             <Helmet>
                 <title>Home</title>
             </Helmet>
