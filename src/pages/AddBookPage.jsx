@@ -28,7 +28,7 @@ export const AddBookPage = () => {
         
     }
     return (
-        <div className="px-6 sm:pb-20 bg-[#EEEEEE] ">
+        <div className="px-6 pt-6 md:pt-10 sm:pb-20 bg-[#EEEEEE] ">
             <Helmet>
                 <title>AddBook</title>
             </Helmet>

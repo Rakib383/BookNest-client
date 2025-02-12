@@ -31,12 +31,12 @@ export const Navbar = () => {
 
                     </ul>
                 </div>
-                <div className="hidden gap-1  lg:flex items-end">
+                <Link to="/" className="hidden gap-1  lg:flex items-end">
 
                     <FaBookOpen className="text-3xl text-primaryColor" />
 
-                    <Link className="font-bold text-sm sm:text-lg text-[#ce7852] mr-3">BookNest</Link>
-                </div>
+                    <span className="font-bold text-sm sm:text-lg text-[#ce7852] mr-3">BookNest</span>
+                </Link>
             </div>
 
             <div className="navbar-center ">
@@ -51,11 +51,11 @@ export const Navbar = () => {
 
 
                 </ul>
-                <div className="lg:hidden flex gap-1 justify-center items-center">
+                <Link to="/" className="lg:hidden flex gap-1 justify-center items-center">
                     <FaBookOpen className="text-2xl sm:text-3xl text-primaryColor" />
 
-                    <Link to="/" className="font-bold sm:text-lg  text-[#ce7852] mr-3">BookNest</Link>
-                </div>
+                    <span to="/" className="font-bold sm:text-lg  text-[#ce7852] mr-3">BookNest</span>
+                </Link>
             </div>
 
 

@@ -1,11 +1,10 @@
-import { useState } from "react"
-import { Loading } from "../components/Loading"
+
 import { useLoaderData } from "react-router-dom"
 
 const AuthorDetails = () => {
-    const [loading, setloading] = useState(false)
+   
     const data = useLoaderData()
-    const { _id, image, name, genre, notableWorks, description } = data
+    const { image, name, notableWorks, description } = data
     return (
 
         <div >
