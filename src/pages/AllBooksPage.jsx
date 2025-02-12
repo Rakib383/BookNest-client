@@ -6,22 +6,25 @@ import { TfiViewGrid, TfiViewList } from "react-icons/tfi";
 import { TableView } from "../components/TableView";
 import axios from "axios";
 import { AuthContext } from "../provider/AuthProvider";
+import { Loading } from "../components/Loading";
 
 
 
 export const AllBooksPage = () => {
     const { user } = useContext(AuthContext)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [books, setBooks] = useState([])
     const [allBooks, setAllBooks] = useState(null)
     const [tableView, setTableView] = useState(false)
 
 
     useEffect(() => {
+        
         axios.get(`https://book-nest-server-zeta.vercel.app/allBooks?email=${user?.email}`, { withCredentials: true })
             .then(res => {
                 setBooks(res.data)
                 setAllBooks(res.data)
+                setLoading(false)
             })
     }, [])
 
@@ -74,7 +77,7 @@ export const AllBooksPage = () => {
                 </div>
             </div>
             {
-                loading && <div className="min-h-screen flex justify-center items-center bg-[#eee]">
+                loading && <div className=" flex justify-center items-center h-[350px] bg-[#eee]">
                     <span className="loading loading-spinner w-12 sm:w-20"></span>
                 </div>
             }
