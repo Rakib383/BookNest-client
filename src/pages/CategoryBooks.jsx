@@ -6,18 +6,18 @@ export const CategoryBooks = () => {
     const data = useLoaderData()
     return (
 
-        <div className="text-center py-3 pt-7 sm:pt-10  bg-[#EEEEEE] pb-10 lg:pb-16">
+        <div className="text-center py-3 pt-7 sm:pt-10   pb-10 lg:pb-16">
             <Helmet>
                 <title>CategoryBooks</title>
             </Helmet>
             <h3 className="font-black font-charm text-xl md:text-2xl text-primaryColor">Discover Your Next Favorite Book</h3>
-            <p className="text-gray-600 font-semibold mt-2 md:text-[17px] px-3 w-96 md:w-[420px] mx-auto">Explore captivating reads across diverse genres to ignite your mind and imagination.</p>
+            <p className="text-gray-600 dark:text-gray-400 font-semibold mt-2 md:text-[17px] px-3 w-96 md:w-[420px] mx-auto">Explore captivating reads across diverse genres to ignite your mind and imagination.</p>
             <div className="flex flex-wrap gap-8 md:gap-10 justify-center py-10 md:pt-16  px-3">
 
 
                 {
                     data.map((book, idx) => (
-                        <div key={idx} className="card h-auto bg-base-100 shrink-0 w-80 py-4 pt-6 shadow-xl">
+                        <div key={idx} className="card h-auto bg-base-100 dark:bg-gray-800 shrink-0 w-80 py-4 pt-6 shadow-xl">
                             <figure className=" h-44 mx-auto rounded-none">
                                 <img
                                     src={book.image}

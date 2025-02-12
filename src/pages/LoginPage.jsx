@@ -87,27 +87,25 @@ export const LoginPage = () => {
 
             <h2 className="text-xl md:text-2xl font-bold text-Pink text-center mb-4 font-charm"  >- Welcome Back -</h2>
 
-            <div className="card bg-base-100  w-[320px] md:w-[340px] shrink-0 shadow-2xl">
+            <div className="card bg-base-100 dark:bg-gray-800   w-[320px] md:w-[340px] shrink-0 shadow-2xl">
 
                 <form onSubmit={handleSubmit} className="card-body pb-0 p-6">
                     <h1 className="text-xl font-bold text-sky-400  text-center">Login</h1>
 
                     <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Email</span>
+                        <label className="label ">
+                            <span className="label-text dark:text-gray-200">Email</span>
                         </label>
-                        <input name="email" type="email" placeholder="email" className="input input-bordered" required />
+                        <input name="email" type="email" placeholder="email" className="input input-bordered dark:text-black" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Password</span>
+                            <span className="label-text dark:text-gray-200">Password</span>
                         </label>
-                        <input name="password" type="password" placeholder="password" className="input input-bordered" required />
-                        <label className="label">
-                            <Link to="" className="label-text-alt link link-hover text-[14px] underline mt-2">Forgot password?</Link>
-                        </label>
+                        <input name="password" type="password" placeholder="password" className="input input-bordered dark:text-black" required />
+                        
                     </div>
-                    <div className="form-control mt-1">
+                    <div className="form-control mt-4">
                         <button type="submit" className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">Login</button>
                         <p className="text-center font-semibold my-2 text-sm">OR</p>
                     </div>

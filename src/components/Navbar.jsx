@@ -1,18 +1,30 @@
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaBookOpen } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { Tooltip } from 'react-tooltip'
+import { CiLight } from "react-icons/ci";
+import { MdDarkMode } from "react-icons/md";
 export const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const [isLight, setIsLight] = useState(true)
+
+    const handleDarkMode = () => {
+        setIsLight(!isLight)
+        const htmlTag = document.documentElement
+        if (!isLight) {
+            return htmlTag.classList.remove('dark')
+        }
+        htmlTag.classList.add('dark')
+    }
 
     return (
 
 
-        <div className="navbar  md:h-[72px]  max-w-7xl mx-auto sm:px-5    ">
+        <div className="navbar   md:h-[72px]  max-w-7xl mx-auto sm:px-5    ">
             <div className="navbar-start ">
                 <div className="dropdown lg:hidden ">
                     <div tabIndex={0} role="button" className="btn pl-1 pr-0.5 btn-ghost lg:hidden hover:bg-white dark:hover:bg-black">
@@ -61,6 +73,22 @@ export const Navbar = () => {
 
             <div className="navbar-end">
 
+                {
+                    isLight ? <div><a className="tooltip"><CiLight onClick={handleDarkMode} className="text-lg sm:text-2xl shrink-0 mx-1 mr-2 sm:mr-6 hover:cursor-pointer" /></a>
+                        <Tooltip className="z-50" anchorSelect=".tooltip" place="bottom" offset={20}>
+                            Light
+                        </Tooltip>
+                    </div> : <div>
+                        <a className="tooltip2">
+                            <MdDarkMode onClick={handleDarkMode} className="text-lg hover:cursor-pointer sm:text-2xl shrink-0 mx-1 mr-2 sm:mr-6 " />
+                        </a>
+                        <Tooltip className="z-50" anchorSelect=".tooltip2" place="bottom" offset={20}>
+                            Dark
+                        </Tooltip>
+                    </div>
+
+
+                }
 
                 {
                     user ? <div className="flex gap-2 sm:gap-4 items-center">

@@ -4,7 +4,7 @@ export const NewBookCard = ({book}) => {
     const {_id,image,name,author,category} = book
 
     return (
-        <div className="card rounded-none h-auto  shrink-0 w-80  py-7">
+        <div className="card rounded-none h-auto dark:bg-gray-800  shrink-0 w-80  py-7">
             <figure className=" h-60 mx-auto">
                 <img
                     src={image}

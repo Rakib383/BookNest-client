@@ -21,9 +21,9 @@ export const Authors = () => {
 
 
     return (
-        <div className="text-center py-3  bg-[#EEEEEE] pb-10 lg:pb-16">
+        <div className="text-center py-3  pb-10 lg:pb-16">
             <h3 className="font-black font-charm text-xl md:text-2xl text-primaryColor">Voices That Inspire</h3>
-            <p className="text-gray-600 font-semibold mt-2 md:text-[17px] px-3 w-96 mx-auto">Explore the journeys, works, and wisdom of remarkable authors.
+            <p className="text-gray-600 dark:text-gray-400 font-semibold mt-2 md:text-[17px] px-3 w-96 mx-auto">Explore the journeys, works, and wisdom of remarkable authors.
 
             </p>
             <div className="w-[400px] sm:w-[600px] md:w-[700px] lg:w-[890px]  mx-auto px-7 mt-8 sm:mt-14 pb-14 ">
@@ -56,7 +56,7 @@ export const Authors = () => {
                 >
                     {
                         authors.map((writer, ind) => <SwiperSlide className="rounded-xl  " key={ind}>
-                            <div className="card rounded-none h-auto  shrink-0 w-80  py-7">
+                            <div className="card rounded-none h-auto  shrink-0 w-80 dark:bg-gray-800  py-7">
                                 <figure className=" w-48 h-60 mx-auto">
                                     <img
                                         src={writer.image}

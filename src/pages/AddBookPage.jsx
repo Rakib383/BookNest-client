@@ -28,16 +28,16 @@ export const AddBookPage = () => {
         
     }
     return (
-        <div className="px-6 pt-6 md:pt-10 sm:pb-20 bg-[#EEEEEE] ">
+        <div className="px-6 pt-6 md:pt-10 sm:pb-20  ">
             <Helmet>
                 <title>AddBook</title>
             </Helmet>
 
             <h2 className="font-black font-charm text-xl md:text-2xl text-primaryColor underline mb-3 sm:mb-6 text-center">Add a New Book</h2>
-            <p className="text-gray-600 font-semibold mb-5 md:text-[17px] px-3 w-80 sm:w-[420px] mx-auto text-center">Fill out the details below to add a new book to the collection.</p>
+            <p className="text-gray-600 dark:text-gray-400 font-semibold mb-5 md:text-[17px] px-3 w-80 sm:w-[420px] mx-auto text-center">Fill out the details below to add a new book to the collection.</p>
 
 
-            <form onSubmit={handleAddBook} className="sm:max-w-xl max-w-sm mx-auto pt-10 shadow-lg  px-6 py-8 rounded-xl bg-gray-300 mb-20 md:mb-24">
+            <form onSubmit={handleAddBook} className="sm:max-w-xl max-w-sm mx-auto pt-10 shadow-lg  px-6 py-8 rounded-xl bg-gray-300 dark:bg-gray-800 mb-20 md:mb-24">
                 <div className="grid gap-6 mb-6 sm:grid-cols-2">
                     <div>
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">

@@ -21,9 +21,9 @@ export const NewArrival = () => {
     })
 
     return (
-        <div className="text-center py-3  bg-[#EEEEEE] pb-10 lg:pb-16">
+        <div className="text-center py-3   pb-10 lg:pb-16">
             <h2 className="font-black font-charm text-xl md:text-2xl text-primaryColor">New Arrivals</h2>
-            <p className="text-gray-600 font-semibold mt-2 md:text-[17px] px-3 w-96 mx-auto">Explore the latest books added to our collection.Stay ahead of the curve with our newest collection.</p>
+            <p className="text-gray-600 dark:text-gray-400 font-semibold mt-2 md:text-[17px] px-3 w-96 mx-auto">Explore the latest books added to our collection.Stay ahead of the curve with our newest collection.</p>
             <div className="w-[400px] sm:w-[600px] md:w-[700px] lg:w-[890px]  mx-auto px-7 mt-8 sm:mt-14 pb-14 ">
 
                 <Swiper

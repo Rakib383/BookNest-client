@@ -92,7 +92,7 @@ export const RegisterPage = () => {
             })
     }
     return (
-        <div className="flex flex-col justify-center items-center mt-8 md:mt-12 bg-[#eee] pb-14 sm:pb-16">
+        <div className="flex flex-col justify-center items-center mt-8 md:mt-12  pb-14 sm:pb-16">
             <Helmet>
                 <title>Register</title>
             </Helmet>
@@ -107,45 +107,45 @@ export const RegisterPage = () => {
 
 
                 {/* register form */}
-                <div className="card bg-base-100  max-w-[330px] md:max-w-[350px] shrink-0 shadow-2xl">
+                <div className="card bg-base-100 dark:bg-gray-800  max-w-[330px] md:max-w-[350px] shrink-0 shadow-2xl">
 
-                    <form onSubmit={handleSubmit} className="card-body pb-1">
+                    <form onSubmit={handleSubmit} className="card-body pb-1 ">
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Name</span>
+                                <span className="label-text dark:text-gray-200">Name</span>
                             </label>
-                            <input name="name" type="text" placeholder="Your Name" className="input h-11 w-64 md:w-72 input-bordered" required />
+                            <input name="name" type="text" placeholder="Your Name" className="input h-11 w-64 md:w-72 input-bordered dark:text-black" required />
+                        </div>
+                        <div className="form-control ">
+                            <label className="label">
+                                <span className="label-text dark:text-gray-200">Photo URL</span>
+                            </label>
+                            <input name="photo" type="text" placeholder="Photo-URL" className="input h-11 w-64 md:w-72 input-bordered dark:text-black" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Photo URL</span>
+                                <span className="label-text dark:text-gray-200">Email</span>
                             </label>
-                            <input name="photo" type="text" placeholder="Photo-URL" className="input h-11 w-64 md:w-72 input-bordered" required />
+                            <input name="email" type="email" placeholder="email" className="input h-11 w-64 md:w-72 input-bordered dark:text-black" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text dark:text-gray-200">Password</span>
                             </label>
-                            <input name="email" type="email" placeholder="email" className="input h-11 w-64 md:w-72 input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input onKeyDown={() => setError(null)} name="password" type="password" placeholder="password" className="input h-11 w-64 md:w-72 input-bordered" required />
+                            <input onKeyDown={() => setError(null)} name="password" type="password" placeholder="password" className="input h-11 w-64 md:w-72 input-bordered dark:text-black" required />
                             {error && <p className="text-red-500 text-sm">{error}</p>}
 
                         </div>
                         <div className="form-control mt-2">
                             <button type="submit" className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">Register</button>
                         </div>
-                        <p className="text-center font-semibold my-0.5 text-sm dark:text-black">OR</p>
+                        <p className="text-center font-semibold my-0.5 text-sm ">OR</p>
                     </form>
                     <div className="w-64 md:w-72 mx-auto mb-3">
                         <button onClick={handleSignInWithGoogle} className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white w-full">Continue with Google</button>
                     </div>
-                    <p className="text-center mb-4 dark:text-black">Already have an account? <Link to="/login" className="text-primaryColor font-bold underline">Login</Link></p>
+                    <p className="text-center mb-4 ">Already have an account? <Link to="/login" className="text-primaryColor font-bold underline">Login</Link></p>
 
                 </div>
             </div>

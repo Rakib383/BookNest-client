@@ -37,7 +37,7 @@ export const UpdateBookPage = () => {
             <h2 className="font-black font-charm text-xl md:text-2xl text-primaryColor underline mb-3 sm:mb-6 text-center">Update Book Details</h2>
 
 
-            <form onSubmit={handleBookUpdate} className="sm:max-w-xl max-w-sm mx-auto pt-10 shadow-lg  px-6 py-8 rounded-xl">
+            <form onSubmit={handleBookUpdate} className="sm:max-w-xl max-w-sm mx-auto pt-10 shadow-lg  px-6 py-8 rounded-xl dark:bg-gray-800">
                 <div className="grid gap-6 mb-6 sm:grid-cols-2">
                     <div>
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">

@@ -76,13 +76,13 @@ export const DetailsPage = () => {
     return (
         <>
             {
-                loading ? <Loading /> : <div className="pt-10 sm:pt-16 pb-20 md:pb-28 bg-[#eee]">
+                loading ? <Loading /> : <div className="pt-10 sm:pt-16 pb-20 md:pb-28 ">
                     <Helmet>
                         <title>DetailsPage</title>
                     </Helmet>
                     <h2 className="font-black font-charm text-xl md:text-2xl text-primaryColor text-center mb-8 sm:mb-10 underline">Book Details</h2>
 
-                    <div className="w-80 sm:w-[510px] mx-auto flex flex-col sm:flex-row items-center card shadow-lg px-6 gap-3 py-6 justify-center bg-white">
+                    <div className="w-80 sm:w-[510px] mx-auto flex flex-col sm:flex-row items-center card shadow-lg px-6 gap-3 py-6 justify-center bg-white dark:bg-gray-800">
                         <div className="w-36 h-44 sm:w-3/5 relative">
                             <img src={image} className=" w-full h-full pb-2" alt="" />
                             {
@@ -109,7 +109,7 @@ export const DetailsPage = () => {
                                 <button disabled={!quantity || isBorrowed} onClick={() => {
                                     document.getElementById('modal_1').showModal()
 
-                                }} className={`btn  bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white px-7 sm:mt-3 mt-2`}>Borrow</button>
+                                }} className={`btn  bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white px-7 disabled:dark:text-gray-400 sm:mt-3 mt-2`}>Borrow</button>
                             }
 
 
@@ -128,19 +128,19 @@ export const DetailsPage = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="text" name="name" value={user?.displayName} placeholder="name" className="input input-bordered" required />
+                        <input type="text" name="name" value={user?.displayName} placeholder="name" className="input dark:text-black input-bordered" required />
                     </div>
                     <div>
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" name="email" value={user?.email} placeholder="email" className="input input-bordered" required />
+                        <input type="email" name="email" value={user?.email} placeholder="email" className="input input-bordered dark:text-black" required />
                     </div>
                     <div>
                         <label className="label">
                             <span className="label-text">Return Date</span>
                         </label>
-                        <input name="returnDate" type="date" className="input w-56 input-bordered" required />
+                        <input name="returnDate" type="date" className="input w-56 input-bordered dark:text-black" required />
 
                     </div>
                     <div className="modal-action justify-center">

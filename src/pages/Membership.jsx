@@ -16,12 +16,12 @@ const Membership = () => {
         <div className="px-5 text-center  pb-10">
 
             <h2 className="text-2xl md:text-3xl  font-bold font-charm mt-7 md:mt-10">Become a Library Member</h2>
-            <p className=" mt-2 w-[340px] mx-auto md:text-base text-gray-700">Unlock exclusive resources, events, and a community of passionate readers.</p>
+            <p className=" mt-2 w-[340px] mx-auto md:text-base text-gray-700 dark:text-gray-400">Unlock exclusive resources, events, and a community of passionate readers.</p>
 
             {/* container */}
             <div className="flex flex-col justify-center md:flex-row flex-wrap items-center gap-7 md:gap-9  my-7">
                 {/* card-1 */}
-                <div className="card w-80 bg-base-100 h-[434px]  shadow-sm relative py-2">
+                <div className="card w-80 bg-base-100 h-[434px] dark:bg-gray-800  shadow-sm relative py-2">
 
                     <div className="card-body text-start">
 
@@ -61,7 +61,7 @@ const Membership = () => {
                     </div>
                 </div>
                 {/* card-2 */}
-                <div className="card w-80 bg-base-100 h-[434px] shadow-sm relative py-2">
+                <div className="card w-80 bg-base-100 h-[434px] shadow-sm relative py-2 dark:bg-gray-800 ">
 
                     <div className="card-body text-start">
 
@@ -97,7 +97,7 @@ const Membership = () => {
 
                     </div>
                 </div>
-                <div className="card w-80 bg-base-100 h-[434px]  shadow-sm relative py-2">
+                <div className="card w-80 bg-base-100 dark:bg-gray-800  h-[434px]  shadow-sm relative py-2">
 
                     <div className="card-body text-start">
 
