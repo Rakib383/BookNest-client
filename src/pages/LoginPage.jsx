@@ -52,7 +52,9 @@ export const LoginPage = () => {
 
                 const email = result.user.email
                 axios.post('https://book-nest-server-zeta.vercel.app/jwt', { email }, { withCredentials: true })
-                    .then(res => console.log(res.data))
+                    .then(res => {
+                        // console.log(res.data)
+                    })
 
                 navigate(location.state ? location.state : "/")
 

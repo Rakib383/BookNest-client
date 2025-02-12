@@ -14,7 +14,7 @@ export const Authors = () => {
     const [authors, setAuthors] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:5000/authors")
+        axios.get("https://book-nest-server-zeta.vercel.app/authors")
             .then(res => setAuthors(res.data))
 
     })

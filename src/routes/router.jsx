@@ -66,8 +66,8 @@ const router = createBrowserRouter([
       },
       {
         path: "authors/:id",
-        element: <AuthorDetails/>,
-        loader: ({ params }) => fetch(`http://localhost:5000/authors/${params.id}`)
+        element: <AuthorDetails />,
+        loader: ({ params }) => fetch(`https://book-nest-server-zeta.vercel.app/authors/${params.id}`)
       },
 
     ]

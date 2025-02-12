@@ -54,7 +54,9 @@ export const RegisterPage = () => {
                 const createdAt = res.user.metadata.creationTime
                 const user = { name, email, createdAt }
                 axios.post('https://book-nest-server-zeta.vercel.app/newUser', user)
-                    .then(res => console.log(res))
+                    .then(res => {
+                        // console.log(res)
+                    })
 
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {

@@ -15,7 +15,7 @@ export const NewArrival = () => {
     const [books, setBooks] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:5000/latestBooks")
+        axios.get("https://book-nest-server-zeta.vercel.app/latestBooks")
             .then(res => setBooks(res.data))
 
     })
