@@ -5,6 +5,8 @@ import { toast } from "react-toastify"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { Helmet } from "react-helmet-async"
 import axios from "axios"
+import loginPic from "../assets/images/login.png"
+import Swal from "sweetalert2"
 
 
 export const LoginPage = () => {
@@ -12,23 +14,10 @@ export const LoginPage = () => {
     const navigate = useNavigate()
     const location = useLocation()
 
-    const successNotify = () => {
-        toast.success("Login successful!", {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
-    }
-
     const erroNotify = () => {
         toast.error('Invalid credentials!', {
             position: "top-center",
-            autoClose: 5000,
+            autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -47,11 +36,17 @@ export const LoginPage = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                successNotify()
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Login successful!",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                 setUser(user);
 
                 const email = result.user.email
-                axios.post('https://book-nest-server-zeta.vercel.app/jwt', { email }, { withCredentials: true })
+                axios.post('http://localhost:5000/jwt', { email }, { withCredentials: true })
                     .then(res => {
                         // console.log(res.data)
                     })
@@ -72,7 +67,13 @@ export const LoginPage = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-                successNotify()
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Login successful!",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                 navigate(location.state ? location.state : "/")
 
             })
@@ -82,40 +83,45 @@ export const LoginPage = () => {
             })
     }
     return (
-        <div className="flex flex-col justify-center items-center mt-8 md:mt-10 pb-14">
+        <div className="flex flex-col justify-center items-center mt-8 md:mt-10 pb-14 md:pb-40">
             <Helmet>
                 <title>Login</title>
             </Helmet>
 
             <h2 className="text-xl md:text-2xl font-bold text-Pink text-center mb-4 font-charm"  >- Welcome Back -</h2>
-
-            <div className="card bg-base-100 dark:bg-gray-800   w-[320px] md:w-[340px] shrink-0 shadow-2xl">
-
-                <form onSubmit={handleSubmit} className="card-body pb-0 p-6">
-                    <h1 className="text-xl font-bold text-sky-400  text-center">Login</h1>
-
-                    <div className="form-control">
-                        <label className="label ">
-                            <span className="label-text dark:text-gray-200">Email</span>
-                        </label>
-                        <input name="email" type="email" placeholder="email" className="input input-bordered dark:text-black" required />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text dark:text-gray-200">Password</span>
-                        </label>
-                        <input name="password" type="password" placeholder="password" className="input input-bordered dark:text-black" required />
-                        
-                    </div>
-                    <div className="form-control mt-4">
-                        <button type="submit" className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">Login</button>
-                        <p className="text-center font-semibold my-2 text-sm">OR</p>
-                    </div>
-                </form>
-                <div className="w-[270px] md:w-[290px] mx-auto mb-3">
-                    <button onClick={handleSignInWithGoogle} className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white w-full">Continue with Google</button>
+            <div className="flex items-center gap-7 mt-4">
+                <div className="w-80 hidden md:block">
+                    <img src={loginPic} className="" alt="" />
                 </div>
-                <p className="text-center pl-8 pb-4 text-base ">Don’t Have An Account ? <Link className="text-primaryColor font-bold underline" to="/register">Register</Link></p>
+
+                <div className="card bg-base-100 dark:bg-gray-800   w-[320px]  shrink-0 shadow-2xl">
+
+                    <form onSubmit={handleSubmit} className="card-body pb-0 p-6">
+                        <h1 className="text-xl font-bold text-sky-400  text-center">Login</h1>
+
+                        <div className="form-control">
+                            <label className="label ">
+                                <span className="label-text dark:text-gray-200">Email</span>
+                            </label>
+                            <input name="email" type="email" placeholder="email" className="input input-bordered dark:text-black" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text dark:text-gray-200">Password</span>
+                            </label>
+                            <input name="password" type="password" placeholder="password" className="input input-bordered dark:text-black" required />
+
+                        </div>
+                        <div className="form-control mt-4">
+                            <button type="submit" className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white">Login</button>
+                            <p className="text-center font-semibold my-2 text-sm">OR</p>
+                        </div>
+                    </form>
+                    <div className="w-[270px]  mx-auto mb-3">
+                        <button onClick={handleSignInWithGoogle} className="btn bg-primaryColor text-white hover:outline outline-primaryColor hover:text-primaryColor hover:bg-white w-full">Continue with Google</button>
+                    </div>
+                    <p className="text-center pl-8 pb-4 text-sm ">Don’t Have An Account ? <Link className="text-primaryColor font-bold underline" to="/register">Register</Link></p>
+                </div>
             </div>
 
         </div>

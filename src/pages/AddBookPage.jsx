@@ -12,20 +12,20 @@ export const AddBookPage = () => {
         const form = e.target
         const formData = new FormData(form)
         const data = Object.fromEntries(formData.entries())
-        data.rating= +data.rating,
-        data.quantity= +data.quantity
-        axios.post(`https://book-nest-server-zeta.vercel.app/addBook?email=${user?.email}`,data,{ withCredentials: true })
-        .then(() => {
-             Swal.fire({
-                            title: "Success!",
-                            text: "Book Added successfully",
-                            icon: "success"
-                          });
-                          form.reset()
-            
-        })
-        .catch(err => console.log(err))
-        
+        data.rating = +data.rating,
+            data.quantity = +data.quantity
+        axios.post(`http://localhost:5000/addBook?email=${user?.email}`, data, { withCredentials: true })
+            .then(() => {
+                Swal.fire({
+                    title: "Success!",
+                    text: "Book Added successfully",
+                    icon: "success"
+                });
+                form.reset()
+
+            })
+            .catch(err => console.log(err))
+
     }
     return (
         <div className="px-6 pt-6 md:pt-10 sm:pb-20  ">
@@ -128,11 +128,11 @@ export const AddBookPage = () => {
 
                 </div>
 
-                <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Short Description</label>
-                <textarea  name="ShortDescription" rows="2" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Description"></textarea>
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Short Description</label>
+                <textarea name="ShortDescription" rows="2" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Description"></textarea>
 
-                <label  className="block mb-2 mt-3 text-sm font-medium text-gray-900 dark:text-white">Book Content</label>
-                <textarea  name="BookContent" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter detailed description of the book's content."></textarea>
+                <label className="block mb-2 mt-3 text-sm font-medium text-gray-900 dark:text-white">Book Content</label>
+                <textarea name="BookContent" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter detailed description of the book's content."></textarea>
 
 
                 <div className="sm:flex">

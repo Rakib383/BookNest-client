@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom"
 import Swal from "sweetalert2";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Membership = () => {
+
+    const {user} = useContext(AuthContext)
+
 
     const handleSubmit = () => {
         Swal.fire({
@@ -54,9 +59,10 @@ const Membership = () => {
                                 <span>Register to get the service</span>
                             </li>
                         </ul>
-                        <Link to="/register" className="mt-2">
-                            <button className="btn bg-secondaryColor  hover:bg-[#40916c] text-white btn-block">Register</button>
-                        </Link>
+                       {user ?  <button disabled className="btn bg-secondaryColor disabled:bg-gray-400  hover:bg-[#40916c] text-white btn-block">Register</button> : <Link to="/register" className="mt-2">
+                            <button className="btn bg-secondaryColor disabled:bg-gray-400  hover:bg-[#40916c] text-white btn-block">Register</button>
+                        </Link> 
+                       }
 
                     </div>
                 </div>
@@ -97,6 +103,7 @@ const Membership = () => {
 
                     </div>
                 </div>
+                 {/* card-3 */}
                 <div className="card w-80 bg-base-100 dark:bg-gray-800  h-[434px]  shadow-sm relative py-2">
 
                     <div className="card-body text-start">

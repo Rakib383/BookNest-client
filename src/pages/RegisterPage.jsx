@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 export const RegisterPage = () => {
     const [error, setError] = useState(null)
@@ -53,14 +54,20 @@ export const RegisterPage = () => {
             .then((res) => {
                 const createdAt = res.user.metadata.creationTime
                 const user = { name, email, createdAt }
-                axios.post('https://book-nest-server-zeta.vercel.app/newUser', user)
+                axios.post('http://localhost:5000/newUser', user)
                     .then(res => {
-                        // console.log(res)
+                        Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: "SignUp successful!",
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
                     })
 
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
-                        successNotify()
+
                         setUser(res.user)
                         navigate(location.state ? location.state : "/")
 
@@ -82,11 +89,17 @@ export const RegisterPage = () => {
                 const name = result.user.displayName
                 const email = result.user.email
                 const user = { name, email, createdAt }
-                axios.post('https://book-nest-server-zeta.vercel.app/newUser', user)
+                axios.post('http://localhost:5000/newUser', user)
                     .then(res => console.log(res))
                 setUser(result.user)
                 navigate(location.state ? location.state : "/")
-                successNotify()
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "SignUp successful!",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
             })
             .catch(err => {
                 errorNotify()

@@ -22,7 +22,7 @@ export const DetailsPage = () => {
     useEffect(() => {
 
         const email = user.email
-        axios.post('https://book-nest-server-zeta.vercel.app/search', { email, _id })
+        axios.post('http://localhost:5000/search', { email, _id })
             .then(res => {
                 if (res.data) {
                     setloading(false)
@@ -50,16 +50,16 @@ export const DetailsPage = () => {
             image, name, author, category, rating, ShortDescription, BookContent, BorrowedDate, returnDate
         }
 
-        axios.patch(`https://book-nest-server-zeta.vercel.app/books/${_id}/decrease`, {})
+        axios.patch(`http://localhost:5000/books/${_id}/decrease`, {})
             .then(res => {
-                axios.post('https://book-nest-server-zeta.vercel.app/borrowedBooks', data)
+                axios.post('http://localhost:5000/borrowedBooks', data)
                     .then(res => {
                         Swal.fire({
                             title: "Success!",
                             text: "Apply successful",
                             icon: "success"
                         });
-                       
+
                         form.reset()
                     })
                     .catch(err => console.log(err))

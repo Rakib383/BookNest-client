@@ -44,17 +44,17 @@ const router = createBrowserRouter([
       {
         path: "books/:category",
         element: <CategoryBooks />,
-        loader: ({ params }) => fetch(`https://book-nest-server-zeta.vercel.app/books/${params.category}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/books/${params.category}`)
       },
       {
         path: "bookDetails/:id",
         element: <PrivateRoute><DetailsPage /></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://book-nest-server-zeta.vercel.app/bookDetails/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/bookDetails/${params.id}`)
       },
       {
         path: "updateBook/:id",
         element: <PrivateRoute><UpdateBookPage /></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://book-nest-server-zeta.vercel.app/bookDetails/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/bookDetails/${params.id}`)
       },
       {
         path: "addBook",
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
       {
         path: "authors/:id",
         element: <AuthorDetails />,
-        loader: ({ params }) => fetch(`https://book-nest-server-zeta.vercel.app/authors/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/authors/${params.id}`)
       },
 
     ]

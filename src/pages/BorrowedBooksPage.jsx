@@ -17,7 +17,7 @@ export const BorrowedBooksPage = () => {
         }
         else {
 
-            axios.post('https://book-nest-server-zeta.vercel.app/myBorrowedBooks', { email: user.email })
+            axios.post('http://localhost:5000/myBorrowedBooks', { email: user.email })
                 .then(res => {
                     setbooks(res.data)
                     setLoading(false)
@@ -40,9 +40,9 @@ export const BorrowedBooksPage = () => {
             confirmButtonText: "Yes, Return it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.patch(`https://book-nest-server-zeta.vercel.app/books/${id}/increase`)
+                axios.patch(`http://localhost:5000/books/${id}/increase`)
                     .then((res) => {
-                        axios.delete(`https://book-nest-server-zeta.vercel.app/borrowedBooks/${id}`)
+                        axios.delete(`http://localhost:5000/borrowedBooks/${id}`)
                             .then(res => {
                                 // console.log(res.data)
                             })
