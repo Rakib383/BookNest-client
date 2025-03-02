@@ -23,11 +23,11 @@ export const Hero = () => {
 
             >
                 <SwiperSlide>
-                    <img src={library1} className='h-[300px] sm:h-[400px] md:h-[550px] lg:h-[620px] xl:h-[680px]' alt="" />
+                    <img src={library1} className='h-[300px] sm:h-[400px] md:h-[550px] lg:h-[620px] ' alt="" />
                 </SwiperSlide>
-                <SwiperSlide><img className='h-[300px] sm:h-[400px] md:h-[550px] lg:h-[620px] xl:h-[680px]' src={library2} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='h-[300px] sm:h-[400px] md:h-[550px] lg:h-[620px] xl:h-[680px]' src={library3} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='h-[300px] sm:h-[400px] md:h-[550px] lg:h-[620px] xl:h-[680px]' src={library4} alt="" /></SwiperSlide>
+                <SwiperSlide><img className='h-[300px] sm:h-[400px] md:h-[550px] lg:h-[620px] ' src={library2} alt="" /></SwiperSlide>
+                <SwiperSlide><img className='h-[300px] sm:h-[400px] md:h-[550px] lg:h-[620px] ' src={library3} alt="" /></SwiperSlide>
+                <SwiperSlide><img className='h-[300px] sm:h-[400px] md:h-[550px] lg:h-[620px] ' src={library4} alt="" /></SwiperSlide>
 
             </Swiper>
             <div 

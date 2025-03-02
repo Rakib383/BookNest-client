@@ -22,11 +22,11 @@ export const Authors = () => {
 
     return (
         <div className="text-center py-3  pb-10 lg:pb-16">
-            <h3 className="font-black font-charm text-xl md:text-2xl text-primaryColor">Voices That Inspire</h3>
-            <p className="text-gray-600 dark:text-gray-400 font-semibold mt-2 md:text-[17px] px-3 w-96 mx-auto">Explore the journeys, works, and wisdom of remarkable authors.
+            <h3 className="font-black font-charm text-2xl md:text-3xl text-primaryColor">Voices That Inspire</h3>
+            <p className="text-gray-600 dark:text-gray-400 font-semibold mt-2 md:text-[17px] px-3 md:px-8">Explore the journeys, works, and wisdom of remarkable authors.
 
             </p>
-            <div className="w-[400px] sm:w-[600px] md:w-[700px] lg:w-[890px]  mx-auto px-7 mt-8 sm:mt-14 pb-14 ">
+            <div className="w-80   sm:w-[500px] md:w-[700px] lg:w-[890px] rounded-md  mx-auto  mt-8 sm:mt-14 pb-14 ">
 
                 <Swiper
                     modules={[Navigation, Autoplay]} // Add modules here
@@ -55,8 +55,8 @@ export const Authors = () => {
                     navigation
                 >
                     {
-                        authors.map((writer, ind) => <SwiperSlide className="rounded-xl  " key={ind}>
-                            <div className="card rounded-none h-auto  shrink-0 w-80 dark:bg-gray-800  py-7">
+                        authors.map((writer, ind) => <SwiperSlide className="rounded-md  " key={ind}>
+                            <div className="card rounded-none h-auto  shrink-0 w-80 dark:bg-gray-800 grow py-7">
                                 <figure className=" w-48 h-60 mx-auto">
                                     <img
                                         src={writer.image}

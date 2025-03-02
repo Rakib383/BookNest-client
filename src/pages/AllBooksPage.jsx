@@ -63,12 +63,12 @@ export const AllBooksPage = () => {
     return (
         <div className="text-center py-3 pt-7 sm:pt-10   pb-16  md:pb-32">
             <Helmet>
-                <title>Books</title>
+                <title>BookNest | Books</title>
             </Helmet>
             <h3 className="font-black font-charm text-xl md:text-2xl text-primaryColor">Explore the World of <span className="bg-secondaryColor rounded-full text-white px-3"> Knowledge</span></h3>
 
             <p className="text-gray-600 dark:text-gray-400 font-semibold mt-2 md:text-[17px] px-3 w-96 md:w-[420px] mx-auto">Dive Into Our Diverse Library of Knowledge.Explore Books That Shape Minds and Transform Lives.  </p>
-            <div onClick={toggleSideBar} className=" flex items-center justify-center gap-1 px-4 py-2.5 font-semibold w-fit bg-white dark:bg-gray-500 mt-3 rounded-md mx-auto lg:hidden hover:cursor-pointer outline-1 min-h-12 h-12 btn"><IoFilter className="text-lg" />Filter</div>
+            <div onClick={toggleSideBar} className=" flex items-center justify-center gap-1 px-4  font-semibold w-fit bg-secondaryColor text-white hover:bg-secondaryColor mt-3 rounded-md mx-auto lg:hidden hover:cursor-pointer  min-h-10 h-10 btn"><IoFilter className="text-lg" />Filter</div>
             {/* Overlay */}
             {isSidebarOpen && (
                 <div
@@ -83,7 +83,7 @@ export const AllBooksPage = () => {
 
 
             {/* view tab */}
-            <div className="flex justify-center  gap-3   mt-6 lg:max-w-7xl  lg:justif mx-auto ">
+            <div className="flex justify-center  gap-3   mt-6 lg:max-w-7xl   mx-auto ">
                 <div onClick={() => setTableView(false)} className={`px-2 py-2 flex items-center gap-1 ${!tableView ? "bg-secondaryColor" : "bg-gray-300 dark:bg-gray-500"} rounded-md hover:cursor-pointer`}>
                     <TfiViewGrid className="text-lg " /> Card View
                 </div>
@@ -97,10 +97,10 @@ export const AllBooksPage = () => {
 
             {/* container */}
 
-            <div className="flex gap-5   mx-auto  max-w-5xl xl:max-w-7xl  px-8">
+            <div className="flex  md:mt-6  justify-center   mx-auto   max-w-7xl  px-8">
 
                 {/* filterBar */}
-                <div className={`w-60 lg:w-72 md:w-64 min-h-screen lg:min-h-96 lg:h-96 absolute lg:static top-16 lg:mt-8 z-50 bg-white dark:bg-gray-800 transition-all duration-700 ease-in-out text-start lg:rounded-md  ${isSidebarOpen ? "right-0" : "-right-64"}`}>
+                <div className={`w-60 shrink-0 lg:w-56 min-h-screen lg:min-h-96 lg:h-96 absolute lg:static lg:mr-5 top-16 lg:mt-8 z-50 bg-white dark:bg-gray-800 transition-all duration-700 ease-in-out text-start lg:rounded-md  ${isSidebarOpen ? "right-0" : "-right-64"}`}>
 
                     <div className=" flex justify-start ml-2 mt-3 lg:hidden">
                         <RxCross1 onClick={toggleSideBar} className="text-xl hover:cursor-pointer" />
@@ -124,7 +124,7 @@ export const AllBooksPage = () => {
 
 
                 {
-                    !loading && !tableView && <div className="flex flex-wrap gap-5 md:gap-7 justify-center w-full lg:justify-start py-10 pt-8 px-3">
+                    !loading && !tableView && <div className="flex flex-wrap gap-5 md:gap-7 justify-center items-center w-full lg:justify-start py-10 pt-8 px-3 lg:pl-2 lg:pr-0">
 
                         {
                             books.map((book, idx) => <BookCard book={book} key={idx} />)

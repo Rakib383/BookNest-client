@@ -21,16 +21,14 @@ export const NewArrival = () => {
     })
 
     return (
-        <div className="text-center py-3   pb-10 lg:pb-16">
-            <h2 className="font-black font-charm text-xl md:text-2xl text-primaryColor">New Arrivals</h2>
-            <p className="text-gray-600 dark:text-gray-400 font-semibold mt-2 md:text-[17px] px-3 w-96 mx-auto">Explore the latest books added to our collection.Stay ahead of the curve with our newest collection.</p>
-            <div className="w-[400px] sm:w-[600px] md:w-[700px] lg:w-[890px]  mx-auto px-7 mt-8 sm:mt-14 pb-14 ">
+        <div className="text-center py-3  pb-10 lg:pb-16">
+            <h2 className="font-black font-charm text-2xl md:text-3xl text-primaryColor">New Arrivals</h2>
+            <p className="text-gray-600 dark:text-gray-400 font-semibold mt-2 md:text-[17px] px-3 md:px-8">Explore the latest books added to our collection.Stay ahead of the curve with our newest collection.</p>
+            <div className="w-80   sm:w-[500px] md:w-[700px] lg:w-[890px] rounded-md  mx-auto  mt-8 sm:mt-14 ">
 
                 <Swiper
                     modules={[Navigation, Autoplay]} // Add modules here
                     centeredSlides={true} // Centers the active slide
-                    // slidesPerView={1.5} // Number of slides to show
-                    spaceBetween={20} // Space between slides
                     breakpoints={{
                         1024: {
                             slidesPerView: 2.5, // For large screens
@@ -53,7 +51,7 @@ export const NewArrival = () => {
                     navigation
                 >
                     {
-                        books.map((book, ind) => <SwiperSlide className="rounded-xl  " key={ind}>
+                        books.map((book, ind) => <SwiperSlide className="rounded-md w-80" key={ind}>
                             <NewBookCard book={book} />
                         </SwiperSlide>)
                     }

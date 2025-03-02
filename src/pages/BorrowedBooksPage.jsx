@@ -58,7 +58,9 @@ export const BorrowedBooksPage = () => {
                 Swal.fire({
                     title: "Returned!",
                     text: "Book has been returned Successfully.",
-                    icon: "success"
+                    icon: "success",
+                    showConfirmButton:false,
+                    timer:1500
                 });
             }
         })

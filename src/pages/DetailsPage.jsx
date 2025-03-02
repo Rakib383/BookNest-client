@@ -57,7 +57,9 @@ export const DetailsPage = () => {
                         Swal.fire({
                             title: "Success!",
                             text: "Apply successful",
-                            icon: "success"
+                            icon: "success",
+                            showConfirmButton: false,
+                            timer: 1500
                         });
 
                         form.reset()
@@ -121,26 +123,26 @@ export const DetailsPage = () => {
 
             {/* modal for Borrow */}
 
-            <dialog id="modal_1" className="modal modal-middle">
+            <dialog id="modal_1" className="modal modal-middle ">
 
-                <form onSubmit={handleFormSubmit} className="modal-box flex flex-col items-center">
+                <form onSubmit={handleFormSubmit} className="modal-box flex flex-col items-center dark:bg-gray-800">
                     <div>
                         <label className="label">
-                            <span className="label-text">Name</span>
+                            <span className="label-text dark:text-white">Name</span>
                         </label>
                         <input type="text" name="name" value={user?.displayName} placeholder="name" className="input dark:text-black input-bordered" required />
                     </div>
                     <div>
                         <label className="label">
-                            <span className="label-text">Email</span>
+                            <span className="label-text dark:text-white">Email</span>
                         </label>
                         <input type="email" name="email" value={user?.email} placeholder="email" className="input input-bordered dark:text-black" required />
                     </div>
                     <div>
                         <label className="label">
-                            <span className="label-text">Return Date</span>
+                            <span className="label-text dark:text-white">Return Date</span>
                         </label>
-                        <input name="returnDate" type="date" className="input w-56 input-bordered dark:text-black" required />
+                        <input name="returnDate" type="date" className="input w-[214px] input-bordered dark:text-black" required />
 
                     </div>
                     <div className="modal-action justify-center">

@@ -8,6 +8,37 @@ body {
     font-family: "Roboto", serif;
 }
 .active {
-    color:#ce7852;
+    color:#ce7852 !important;
+    font-weight: 700;
     
 }
+
+/* Dark mode dropdown styles */
+
+.custom-dropdown .ant-dropdown-menu {
+    width: 150px !important;
+    
+  }
+  
+  .dark .custom-dropdown .ant-dropdown-menu {
+    background-color: #17202d !important; 
+    color: white !important; 
+    
+  }
+  
+  
+  .dark .custom-dropdown .ant-dropdown-menu-item {
+    color: white !important; 
+   
+  }
+  
+  
+  .dark .custom-dropdown .ant-dropdown-menu-item:hover {
+    background-color: #1e293b !important;
+  }
+
+  /* styles for swiper navigation arrow */
+
+  :root {
+    --swiper-navigation-color: #52B788;
+  }

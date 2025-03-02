@@ -13,6 +13,7 @@ import { ErrorPage } from "../pages/ErrorPage";
 import { PrivateRoute } from "./PrivateRoute";
 import Membership from "../pages/Membership";
 import AuthorDetails from "../pages/AuthorDetails";
+import { Reset } from "../pages/Reset";
 
 
 const router = createBrowserRouter([
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: "borrowedBooks",
         element: <PrivateRoute><BorrowedBooksPage /></PrivateRoute>,
+      },
+      {
+        path: "reset",
+        element: <Reset/>,
       },
       {
         path: "authors/:id",

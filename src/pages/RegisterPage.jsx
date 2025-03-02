@@ -122,7 +122,7 @@ export const RegisterPage = () => {
 
 
                 {/* register form */}
-                <div className="card bg-base-100 dark:bg-gray-800  max-w-[330px] md:max-w-[350px] shrink-0 shadow-2xl">
+                <div className="card bg-base-100 dark:bg-gray-800  w-80 rounded-lg md:w-[340px] shrink-0 shadow-2xl">
 
                     <form onSubmit={handleSubmit} className="card-body pb-1 ">
 

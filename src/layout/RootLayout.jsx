@@ -7,7 +7,7 @@ export const RootLayout = () => {
     return (
         <div >
             <ScrollRestoration />
-            <header className="fixed left-1/2 transform -translate-x-1/2 z-30 dark:bg-gray-800 w-full backdrop-blur-xl">
+            <header className="fixed left-1/2 transform -translate-x-1/2 z-30 dark:bg-gray-800 bg-white w-screen ">
                 <Navbar />
             </header>
             <main className="pt-16 md:pt-[72px]">
